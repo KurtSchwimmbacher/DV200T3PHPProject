@@ -1,0 +1,11 @@
+body{
+    background-image: url(../assets/backgroundY.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+
+.main-content{
+    margin-left: 200px;
+  }

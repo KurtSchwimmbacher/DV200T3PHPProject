@@ -1,0 +1,130 @@
+.main-content{
+    margin-left: 200px;
+  }
+
+
+  .login-con{
+    background-color: white;
+    padding: 10%;
+    border-radius: 5%;
+    box-shadow: 8px 17px 42px 0px #0000003e;
+  }
+
+  .btn-login{
+    width: 100% !important;
+    background-color: #2EAFAB !important;
+    color: #FBFDFC !important;
+  }
+
+
+  /* The slider */
+  /* ============================================================================================= */
+
+  /* form slider */
+  /* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .remember-me{
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .remember-me p{
+    margin-left: 0.4rem;
+    font-size: 14px;
+  }
+
+
+  .switch{
+    width: 36px !important;
+    height: 24px;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2EAFAB;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2EAFAB;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  /* form extended section */
+.no-account-text{
+    display: flex; 
+    flex-direction: row;
+    color: #d9d9d9;
+    width: 100%;
+}
+
+.create-account-text{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-create{
+    width: 60%;
+    margin-left: 20%;
+    background-color: #A2E7E4 !important;
+    border-radius: 25px !important;
+    color: #FBFDFC !important;
+}
+
+.no-account-text:before, .no-account-text:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 2px solid #d9d9d9; 
+    margin: auto; 
+} 

@@ -1,0 +1,82 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #2EAFAB;
+    position: fixed;
+    height: 100% !important;
+    overflow: auto;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .nav-brand{
+    width: 100%;
+    display: flex !important;
+    /* flex-direction: column; */
+    justify-content: center;
+  }
+
+  .logo-img{
+    width: 45%;
+    padding: 10%;
+  }
+
+  .brand-name{
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+    font-weight: 800;
+    color: #FBFDFC;
+  }
+
+  .yellow-i{
+    color: #FDCE1A;
+  }
+
+
+
+
+  .sidebar a {
+    display: block;
+    color: #FBFDFC;
+    font-weight: 400;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidebar a.active {
+    color: #FDCE1A;
+    font-weight: 600;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    /* background-color: #555; */
+    color: #FDCE1A;
+  }
+
+  .nav-acount{
+    position: fixed;
+    bottom: 5%;
+  }
+  
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

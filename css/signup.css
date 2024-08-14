@@ -1,0 +1,39 @@
+/* sign up */
+/* ==================================================================================== */
+
+
+.btn-logIn{
+    width: 60%;
+    margin-left: 20%;
+    background-color: #FEE481 !important;
+    border-radius: 25px !important;
+    color: #FBFDFC !important;
+  }
+  
+  .btn-signup{
+    width: 100% !important;
+    background-color: #FDCE1A !important;
+    color: #0C0925 !important;
+  }
+
+  .btn-signUp{
+    width: 60%;
+    margin-left: 20%;
+    background-color: #FDCE1A !important;
+    border-radius: 25px !important;
+    color: #0C0925 !important;
+  }
+  
+  .blue-blob{
+    position: absolute;
+    height: 200vh;
+    bottom: -115%;
+    left: -50%;
+  }
+  
+  .yellow-blob{
+    height: 100vh;
+    position: absolute;
+    right: -15%;
+    top: -60%;
+  }
