@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- bootstrap cols/rows -->
         <div class="container">
             <div class="row">
-                <div class="col-12 mt-5">
+                <div class="col-12 mt-3">
                     <!-- form title -->
                     <div class="login-con mt-5">
                         <h1 class="login-title">&#160Login&#160</h1>

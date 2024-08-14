@@ -50,6 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $stmt->close();
     $conn->close();
 }
+
+
+
+// Fetch all questions
+$sql = "SELECT UserID, QuestionTitle, QuestionBody, questionImg, isApproved FROM questions";
+$result = $conn->query($sql);
 ?>
 
 
@@ -63,35 +69,69 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         <!-- bootstrap cols/rows -->
         <div class="container">
             <div class="row">
-                <!-- used to space the form in the center -> empty col -->
-                <div class="col-2"></div>
-
-                <div class="col-8 mt-5">
+                <div class="col-12 mt-3">
                     <!-- form title -->
                     <div class="new-post-con mt-5">
-                        <h1 class="new-post-title mb-4">Create a Post</h1>
+                        <h1 class="new-post-title mb-4">&#160Create a Post&#160</h1>
                         <!-- form start -->
-                        <form class="row g-3" action="createPost.php" method="post" enctype="multipart/form-data">
-                            <div class="col-6 mt-4">
-                                <input class="form-control file-upload" type="file" id="questionPicture" name="picture">
-                            </div>
-                            <div class="col-6 mt-4">
+                        <form class="new-post-form" action="createPost.php" method="post" enctype="multipart/form-data">
+                            
+                            <div class="mt-4">
                                 <input type="text" class="form-control " id="questionTitle" name="questionTitle" placeholder="Question Title" required>
                             </div>
-                            <div class="col-6 mt-4">
+                            <div class="mt-4">
                                 <textarea class="form-control question-text" id="questionDesc" name="questionDesc" placeholder="Describe your question" required></textarea>
-                            
-                            <div class="col-6 mt-4">
+                            </div>
+                            <div class="mt-4">
+                                <input class="form-control file-upload" type="file" id="questionPicture" name="picture">
+                            </div>
+                            <div class="mt-4">
                                 <input type="submit" class="btn btn-post" name="submit" value="Upload">
                             </div>
                         </form>
-
                         <!-- form end -->
-
                     </div>
                 </div>
-                <!-- used to space the form in the center -> empty col -->
-                <div class="col-2"></div>
+            </div>
+
+            <div class="row">
+                <?php
+                    if ($result->num_rows > 0) {
+                        // UserID, QuestionTitle, QuestionBody, questionImg, isApproved
+                        while($row = $result->fetch_assoc()) {
+                            // echo "<div class='col-12'>";
+                            //     echo "<div class='question-card'>";
+                            //         echo "<h2>" . $row["QuestionTitle"] . "</h2>";
+                            //         echo "<p><strong>Summary:</strong> " . $row["QuestionBody"] . "</p>";
+                            //         if($row["questionImg"] !=NULL){
+                            //             echo "<img class='card-img-top' src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'><br>";
+                            //         }
+                            //         // echo "<button class='delete-btn' onclick='confirmDelete(" . $row["id"] . ")'>Delete</button>";
+                            //     echo "</div>";
+                            // echo "</div>";
+                            echo "<div class='card question-card mb-3'>";
+                                echo "<div class='row g-0'>";
+                                    echo "<div class='col-md-4'>";        
+                                        if($row["questionImg"] != NULL){
+                                            echo "<img class='img-fluid rounded-start'src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'>";
+                                        }            
+                                    echo "</div>";            
+                                    echo "<div class='col-md-8'>";            
+                                        echo "<div class='card-body'>";            
+                                            echo "<h5 class='card-title'>" . $row["QuestionTitle"] . "</h5>";           
+                                            echo "<p class='card-text'>" . $row["QuestionBody"] . "</p>";                
+                                            // echo " <p class='card-text'><small class='text-body-secondary'>Last updated 3 mins ago</small></p>";                
+                                        echo "</div>";               
+                                    echo "</div>";            
+                                echo "</div>";            
+                            echo "</div>";        
+                                
+                        }
+                    } else {
+                        echo "No questions found.";
+                    }
+                    $conn->close();
+                ?>
             </div>
         </div>
     </div>

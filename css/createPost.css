@@ -3,20 +3,100 @@
 }
 
 .new-post-title{
-    color: white;
-}
+    display: flex;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: -5vh;
+    color: #2F4F2F;    
+    text-align: center;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-size: 48px;
+    font-weight: 800 !important;
+  }
+
+  .new-post-title:before, .new-post-title:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 4px solid #2F4F2F; 
+    margin: auto; 
+    border-radius: 50px;
+} 
 
 .new-post-con{
-    background-color: #2EAFAB;
-    padding: 5%;
-    border-radius: 40px;
-    box-shadow: 8px 17px 42px 0px #0000003e;
+    background-image: url("../assets/Medium_Box.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 7%;
+    width: 100%;
+}
+
+.new-post-form{
+    width: 50%;
+    margin-left: 25%;
 }
 
 .btn-post{
     margin-left: 10%;
     width: 80% !important;
-    background-color: #FDCE1A !important;
+    background-color: #4A7A8C !important;
     color: #0C0925 !important;
+    color: #faf9f6 !important;
 }
 
+
+.question-text{
+    /* mix-blend-mode: multiply; */
+    height: 20vh;
+    background-color: #f6f6f6 !important;
+    color: #2F4F2F !important;
+    font-weight: 600;
+}
+
+
+form{
+    font-family: "Shadows Into Light", cursive !important; 
+    color: #2F4F2F;
+    font-weight: 600;
+  }
+  
+  input{
+    background-color: #f6f6f6 !important;
+    color: #2F4F2F !important;
+    font-weight: 600 !important;
+  }
+
+
+
+.question-card{
+  background-image: url("../assets/Faction_Top_Bar.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 7%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+.uneditable-input:focus {   
+  border-color: #2F4F2F69;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #2f4f2f69 !important;
+  outline: 0 none;
+}

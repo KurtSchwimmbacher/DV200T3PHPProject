@@ -3,10 +3,10 @@ body{
     color: #faf9f6;
     background-color: #faf9f6;
     background-image: url(../assets/root_bg_lowOpacity.png);
-    background-size: fill;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -15,3 +15,12 @@ body{
     margin-left: 200px;
   }
   
+.index-title{
+    width: 80%;
+    height: 70vh;
+    margin-left: 10%;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 800;
+    font-size: 60px;
+    color: #4A7A8C;
+}

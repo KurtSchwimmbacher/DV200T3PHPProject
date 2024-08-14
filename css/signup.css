@@ -5,25 +5,33 @@
 .btn-logIn{
     width: 60%;
     margin-left: 20%;
-    background-color: #FEE481 !important;
+    background-color: #C9B754 !important;
     border-radius: 25px !important;
     color: #FBFDFC !important;
   }
   
   .btn-signup{
     width: 100% !important;
-    background-color: #FDCE1A !important;
-    color: #0C0925 !important;
+    background-color: #4A7A8C !important;
+    color: #faf9f6 !important;
   }
 
   .btn-signUp{
     width: 60%;
     margin-left: 20%;
-    background-color: #fae077 !important;
+    background-color: #799179!important;
     border-radius: 25px !important;
-    color: #0C0925 !important;
+    color: #FAF9F6 !important;
+    font-family: "Shadows Into Light", cursive !important; 
   }
   
+  .signup-con{
+    background-image: url("../assets/Medium_Box.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 4%;
+  }
 
 
 

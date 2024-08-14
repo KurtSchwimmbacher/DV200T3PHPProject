@@ -26,7 +26,7 @@
     display: flex;
     width: 65%;
     margin-left: 17.5%;
-    margin-top: -5vh;
+    margin-top: -2vh;
     color: #2F4F2F;    
     text-align: center;
     font-family: "Shadows Into Light", cursive !important; 
@@ -148,7 +148,7 @@
     margin-left: 20%;
     background-color: #799179 !important;
     border-radius: 25px !important;
-    color: #FBFDFC !important;
+    color: #FAF9F6!important;
     font-family: "Shadows Into Light", cursive !important; 
 }
 
@@ -170,16 +170,6 @@ input{
   color: #2F4F2F !important;
   font-weight: 600 !important;
 }
-
-
-
-
-/* ========================================================================= */
-/* blobs */
-
-
-
-
 
 
 textarea:focus,

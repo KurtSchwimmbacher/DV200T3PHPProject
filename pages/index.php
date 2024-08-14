@@ -16,8 +16,13 @@ if (!isset($_SESSION['username'])) {
 <link href="../css/header.css" rel="stylesheet">
 
 <main class="main-content">
-    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-    <p>This is the home page.</p>
+   <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h1 class="index-title">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+            </div>
+        </div>
+   </div>
     
 </main>
 

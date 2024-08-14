@@ -38,33 +38,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- html -->
 <main>
-
-    <!-- Blob images -->
-    <!-- <img src="../assets/blob1.svg" id="blueBlob" class="blob-blue" alt="Rotating Blob">
-    <img src="../assets/blob2.svg" id="yellowBlob" class="blob-yellow" alt="Rotating Blob"> -->
-
-
 <div class="main-content">
     <div class="container">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6 mt-5">
-                <div class="login-con">
-                    <h1>Sign Up</h1>
-                    <form action="" method="POST" onsubmit="return validateForm()">
-                        <div class="mb-4 mt-4">
+            <div class="col-12 mt-3">
+                <div class="signup-con mt-5">
+                    <h1 class="login-title mb-4">&#16Sign Up&#16</h1>
+                    <form class="login-form" action="" method="POST" onsubmit="return validateForm()">
+                        <div class="mt-3">
                             <input type="text" class="form-control" name="signUpUsername" id="signUpUsername" placeholder="Username" required>
                         </div>
-                        <div class="mb-4 mt-4">
+                        <div class="mt-3">
                             <input type="email" class="form-control" name="signUpEmail" id="signUpEmail" placeholder="Email" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mt-3">
                             <input type="password" class="form-control" name="signUpPassword" id="signUpPassword" placeholder="Password" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mt-3">
                             <input type="password" class="form-control" id="signUpPasswordConfirm" placeholder="Confirm Password" required>
                         </div>
-                        <button type="submit" class="btn btn-signup mt-4">Sign Up</button>
+                        <button type="submit" class="btn btn-signup mt-3">Sign Up</button>
                     </form>
 
                     <div class="login-form-extent mt-4 mb-1">
@@ -76,8 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
-
-            <div class="col-3"></div>
         </div>
     </div>
     </div>
