@@ -4,10 +4,11 @@
 <aside>
     <!-- link css file to style sidebar -->
     <link href="../css/sidebar.css" rel="stylesheet">
+    
     <nav class="nav-tag">
         <div class="sidebar">
             <div class="nav-brand">
-                <img class="logo-img" src="../assets/root_logo_noBG.png" alt="Logo">
+                <img class="logo-img" src="../assets/vagabond_logo.png" alt="Logo">
             </div>
             <h3 class="brand-name">Forest<b class="green-tactics">Tactics</b></h3>
             <a class="" href="../pages/index.php">Home</a>
