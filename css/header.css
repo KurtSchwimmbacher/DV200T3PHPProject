@@ -1,7 +1,11 @@
 body{
-    background-image: url(../assets/backgroundY.png);
-    background-size: cover;
+    
+    color: #faf9f6;
+    background-color: #faf9f6;
+    background-image: url(../assets/root_bg_lowOpacity.png);
+    background-size: fill;
     background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 

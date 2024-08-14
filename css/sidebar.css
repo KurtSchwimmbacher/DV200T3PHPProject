@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #2EAFAB;
+    background-color: #758c94;
     position: fixed;
     height: 100% !important;
     overflow: auto;
@@ -19,23 +19,28 @@
     display: flex !important;
     /* flex-direction: column; */
     justify-content: center;
+ 
   }
 
   .logo-img{
-    width: 45%;
+    width: 100%;
     padding: 10%;
+
   }
 
   .brand-name{
+    margin-top: -5vh;
     display: flex !important;
     justify-content: center;
     width: 100%;
-    font-weight: 800;
-    color: #FBFDFC;
+    font-weight: 700;
+    
+    font-family: "Shadows Into Light", cursive !important; 
+    color: #faf9f6;
   }
 
-  .yellow-i{
-    color: #FDCE1A;
+  .green-tactics{
+    color: #2F4F2F;
   }
 
 
@@ -43,20 +48,22 @@
 
   .sidebar a {
     display: block;
-    color: #FBFDFC;
-    font-weight: 400;
+    color: #faf9f6;
+    font-weight: 600;
     padding: 16px;
     text-decoration: none;
+    font-size: 20px;
+    font-family: "Shadows Into Light", cursive !important; 
   }
   
   .sidebar a.active {
-    color: #FDCE1A;
+    color: #C9B754;
     font-weight: 600;
   }
   
   .sidebar a:hover:not(.active) {
     /* background-color: #555; */
-    color: #FDCE1A;
+    color: #C9B754;
   }
 
   .nav-acount{

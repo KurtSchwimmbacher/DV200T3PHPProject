@@ -56,10 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- html -->
 <main>
 
-    <!-- Blob images -->
-    <img src="../assets/blob1.svg" id="blueBlob" class="blue-blob" alt="Rotating Blob">
-    <img src="../assets/blob2.svg" id="yellowBlob" class="yellow-blob" alt="Rotating Blob">
-    
 
     <div class="main-content">
         <!-- bootstrap cols/rows -->
@@ -71,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-6 mt-5">
                     <!-- form title -->
                     <div class="login-con mt-5">
-                        <h1>Login</h1>
+                        <h1 class="login-title">Login</h1>
                         <!-- form start -->
                         <form action="" method="POST">
                             <div class="mb-4 mt-4">

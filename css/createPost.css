@@ -2,9 +2,21 @@
     margin-left: 200px;
 }
 
-.newPost-con{
-    background-color: white;
-    padding: 10%;
-    border-radius: 5%;
+.new-post-title{
+    color: white;
+}
+
+.new-post-con{
+    background-color: #2EAFAB;
+    padding: 5%;
+    border-radius: 40px;
     box-shadow: 8px 17px 42px 0px #0000003e;
 }
+
+.btn-post{
+    margin-left: 10%;
+    width: 80% !important;
+    background-color: #FDCE1A !important;
+    color: #0C0925 !important;
+}
+

@@ -7,13 +7,13 @@
     <nav class="nav-tag">
         <div class="sidebar">
             <div class="nav-brand">
-                <img class="logo-img" src="../assets/Logo.svg" alt="Logo">
+                <img class="logo-img" src="../assets/root_logo_noBG.png" alt="Logo">
             </div>
-            <h3 class="brand-name">Inqu<b class="yellow-i">i</b>reNet</h3>
+            <h3 class="brand-name">Forest<b class="green-tactics">Tactics</b></h3>
             <a class="" href="../pages/index.php">Home</a>
             <a href="../pages/createPost.php">Post</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="#contact">Feed</a>
+            <a href="#about">Browse</a>
             
             <div class="nav-acount">
                 <a class="account active" href="../pages/login.php">

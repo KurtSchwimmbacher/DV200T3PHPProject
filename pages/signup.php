@@ -40,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main>
 
     <!-- Blob images -->
-    <img src="../assets/blob1.svg" id="blueBlob" class="blob-blue" alt="Rotating Blob">
-    <img src="../assets/blob2.svg" id="yellowBlob" class="blob-yellow" alt="Rotating Blob">
+    <!-- <img src="../assets/blob1.svg" id="blueBlob" class="blob-blue" alt="Rotating Blob">
+    <img src="../assets/blob2.svg" id="yellowBlob" class="blob-yellow" alt="Rotating Blob"> -->
 
 
 <div class="main-content">

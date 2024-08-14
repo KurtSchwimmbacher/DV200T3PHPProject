@@ -68,21 +68,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
                 <div class="col-8 mt-5">
                     <!-- form title -->
-                    <div class="newPost-con mt-5">
-                        <h1>Create a Post</h1>
+                    <div class="new-post-con mt-5">
+                        <h1 class="new-post-title mb-4">Create a Post</h1>
                         <!-- form start -->
-                        <form action="createPost.php" method="post" enctype="multipart/form-data">
-                            <!-- <label for="title">Question Title:</label> -->
-                            <input type="text" class="form-control" id="questionTitle" name="questionTitle" placeholder="Question Title" required><br><br>
-
-                            <!-- <label for="summary">Movie Summary:</label> -->
-                            <textarea class="form-control" id="questionDesc" name="questionDesc" placeholder="describe your question" required></textarea><br><br>
-
-                            <!-- <label for="picture">Movie Picture:</label> -->
-                            <input type="file" id="questionPicture" name="picture" ><br><br>
-
-                            <input type="submit" name="submit" value="Upload">
+                        <form class="row g-3" action="createPost.php" method="post" enctype="multipart/form-data">
+                            <div class="col-6 mt-4">
+                                <input class="form-control file-upload" type="file" id="questionPicture" name="picture">
+                            </div>
+                            <div class="col-6 mt-4">
+                                <input type="text" class="form-control " id="questionTitle" name="questionTitle" placeholder="Question Title" required>
+                            </div>
+                            <div class="col-6 mt-4">
+                                <textarea class="form-control question-text" id="questionDesc" name="questionDesc" placeholder="Describe your question" required></textarea>
+                            
+                            <div class="col-6 mt-4">
+                                <input type="submit" class="btn btn-post" name="submit" value="Upload">
+                            </div>
                         </form>
+
                         <!-- form end -->
 
                     </div>
