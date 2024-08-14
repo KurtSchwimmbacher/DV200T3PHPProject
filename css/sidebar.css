@@ -25,7 +25,6 @@
   .logo-img{
     width: 100%;
     padding: 10%;
-
   }
 
   .brand-name{
@@ -36,7 +35,11 @@
     font-weight: 700;
     
     font-family: "Shadows Into Light", cursive !important; 
-    color: #faf9f6;
+    color: #f6f6f6;
+  }
+
+  .brand-name:hover, .logo-img:hover{
+    cursor: pointer;
   }
 
   .green-tactics{
@@ -48,7 +51,7 @@
 
   .sidebar a {
     display: block;
-    color: #faf9f6;
+    color: #f6f6f6;
     font-weight: 600;
     padding: 16px;
     text-decoration: none;
@@ -57,13 +60,15 @@
   }
   
   .sidebar a.active {
-    color: #C9B754;
-    font-weight: 600;
+    color: #2F4F2F;
+    font-weight: 800;
   }
   
   .sidebar a:hover:not(.active) {
     /* background-color: #555; */
-    color: #C9B754;
+    color: #2F4F2F;
+    font-size: 20px;
+    cursor: pointer;
   }
 
   .nav-acount{

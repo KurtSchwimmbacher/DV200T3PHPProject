@@ -56,20 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- html -->
 <main>
 
-
     <div class="main-content">
         <!-- bootstrap cols/rows -->
         <div class="container">
             <div class="row">
-                <!-- used to space the login form in the center -> empty col -->
-                <div class="col-3"></div>
-
-                <div class="col-6 mt-5">
+                <div class="col-12 mt-5">
                     <!-- form title -->
                     <div class="login-con mt-5">
-                        <h1 class="login-title">Login</h1>
+                        <h1 class="login-title">&#160Login&#160</h1>
                         <!-- form start -->
-                        <form action="" method="POST">
+                        <form action="" method="POST" class="login-form">
                             <div class="mb-4 mt-4">
                                 <input type="text" class="form-control" name="loginUsername" id="loginUsername" placeholder="Email or username" required>
                             </div>
@@ -99,8 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                 </div>
-                <!-- used to space the login form in the center -> empty col -->
-                <div class="col-3"></div>
             </div>
         </div>
     </div>

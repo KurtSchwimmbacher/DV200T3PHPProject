@@ -2,25 +2,45 @@
     margin-left: 200px;
   }
 
-
   .login-con{
-    background-color: #faf9f6 !important;
-    padding: 10%;
-    border-radius: 25px;
-    box-shadow: 8px 17px 42px 0px #0000003e;
+    background-image: url("../assets/Medium_Box.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 5%;
+  }
+
+
+  .login-form ,.login-form-extent{
+    width: 50%;
+    margin-left: 25%;
   }
 
   .btn-login{
     width: 100% !important;
-    background-color: #2F4F2F !important;
+    background-color: #4A7A8C !important;
     color: #faf9f6 !important;
   }
 
   .login-title{
+    display: flex;
+    width: 65%;
+    margin-left: 17.5%;
+    margin-top: -5vh;
+    color: #2F4F2F;    
+    text-align: center;
     font-family: "Shadows Into Light", cursive !important; 
-    color: #2F4F2F;
+    font-size: 48px;
+    font-weight: 800 !important;
   }
 
+  .login-title:before, .login-title:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 4px solid #2F4F2F; 
+    margin: auto; 
+    border-radius: 50px;
+} 
 
   /* The slider */
   /* ============================================================================================= */
@@ -109,63 +129,76 @@
 .no-account-text{
     display: flex; 
     flex-direction: row;
-    color: #d9d9d9;
+    color: #4A7A8C !important;
     width: 100%;
 }
 
 .create-account-text{
     display: flex;
     width: 100%;
+    color: #4A7A8C !important;
     justify-content: center;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .btn-create{
     width: 60%;
     margin-left: 20%;
-    background-color: #b5d4b5 !important;
+    background-color: #799179 !important;
     border-radius: 25px !important;
     color: #FBFDFC !important;
+    font-family: "Shadows Into Light", cursive !important; 
 }
 
 .no-account-text:before, .no-account-text:after { 
     content: ""; 
     flex: 1 1; 
-    border-bottom: 2px solid #d9d9d9; 
+    border-bottom: 2px solid #4A7A8C; 
     margin: auto; 
 } 
+
+form{
+  font-family: "Shadows Into Light", cursive !important; 
+  color: #2F4F2F;
+  font-weight: 600;
+}
+
+input{
+  background-color: #f6f6f6 !important;
+  color: #2F4F2F !important;
+  font-weight: 600 !important;
+}
+
+
+
 
 /* ========================================================================= */
 /* blobs */
 
-.blue-blob{
-  position: absolute;
-  height: 200vh;
-  bottom: -115%;
-  left: -50%;
-  z-index: -1; /* Ensure it stays behind other content */
-}
-
-.yellow-blob{
-  height: 100vh;
-  position: absolute;
-  right: -15%;
-  top: -60%;
-  z-index: -1; /* Ensure it stays behind other content */
-}
 
 
-.blob-blue{
-  position: absolute;
-  height: 200vh;
-  top: -60%;
-  left: -70%;
-  z-index: -1; /* Ensure it stays behind other content */
-}
 
-.blob-yellow{
-  height: 100vh;
-  position: absolute;
-  right: -25%;
-  bottom: -60%;
-  z-index: -1; /* Ensure it stays behind other content */
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: #2F4F2F69;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #2f4f2f69;
+  outline: 0 none;
 }
