@@ -4,7 +4,7 @@
 <aside>
     <!-- link css file to style sidebar -->
     <link href="../css/sidebar.css" rel="stylesheet">
-    <nav>
+    <nav class="nav-tag">
         <div class="sidebar">
             <div class="nav-brand">
                 <img class="logo-img" src="../assets/Logo.svg" alt="Logo">

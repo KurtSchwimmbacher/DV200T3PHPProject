@@ -19,21 +19,12 @@
   .btn-signUp{
     width: 60%;
     margin-left: 20%;
-    background-color: #FDCE1A !important;
+    background-color: #fae077 !important;
     border-radius: 25px !important;
     color: #0C0925 !important;
   }
   
-  .blue-blob{
-    position: absolute;
-    height: 200vh;
-    bottom: -115%;
-    left: -50%;
-  }
-  
-  .yellow-blob{
-    height: 100vh;
-    position: absolute;
-    right: -15%;
-    top: -60%;
-  }
+
+
+
+

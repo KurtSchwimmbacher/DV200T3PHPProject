@@ -53,9 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- html -->
 <main>
-    <!-- blobs -->
-    <img src="../assets/blob1.svg" id="blueBlob" class="blob" alt="Rotating Blob">
-    <img src="../assets/blob2.svg" id="yellowBlob" class="blob-yellow" alt="Rotating Blob">
+
+    <!-- Blob images -->
+    <img src="../assets/blob1.svg" id="blueBlob" class="blue-blob" alt="Rotating Blob">
+    <img src="../assets/blob2.svg" id="yellowBlob" class="yellow-blob" alt="Rotating Blob">
+    
 
     <div class="main-content">
         <!-- bootstrap cols/rows -->

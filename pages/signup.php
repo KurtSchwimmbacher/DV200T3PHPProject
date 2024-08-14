@@ -38,12 +38,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- html -->
 <main>
+
+    <!-- Blob images -->
+    <img src="../assets/blob1.svg" id="blueBlob" class="blob-blue" alt="Rotating Blob">
+    <img src="../assets/blob2.svg" id="yellowBlob" class="blob-yellow" alt="Rotating Blob">
+
+
 <div class="main-content">
     <div class="container">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6 mt-5">
-                <div class="login-con mt-5">
+                <div class="login-con">
                     <h1>Sign Up</h1>
                     <form action="" method="POST" onsubmit="return validateForm()">
                         <div class="mb-4 mt-4">
@@ -65,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <p class="no-account-text">&#160OR&#160</p>
                         <p class="create-account-text">Already have an account?</p>
                         <a href="login.php">
-                            <button class="btn btn-signUp">Log In</button>
+                            <button type="button" class="btn btn-signUp">Log In</button>
                         </a>
                     </div>
                 </div>
