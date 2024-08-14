@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verify the password
         if (password_verify($password, $user['password'])) {
+            // Store user information in the session
+            $_SESSION['userID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             // Redirect to home page
             header("Location: index.php");

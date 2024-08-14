@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
 <main class="main-content">
     <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
     <p>This is the home page.</p>
-    <a href="../functionality/logout.php">Logout</a>
+    
 </main>
 
 <?php include '../includes/footer.php'; ?>
