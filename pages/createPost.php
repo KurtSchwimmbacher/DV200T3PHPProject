@@ -95,43 +95,24 @@ $result = $conn->query($sql);
             </div>
 
             <div class="row">
-                <?php
+                    <?php
+                    // UserID, QuestionTitle, QuestionBody, questionImg, isApproved
                     if ($result->num_rows > 0) {
-                        // UserID, QuestionTitle, QuestionBody, questionImg, isApproved
                         while($row = $result->fetch_assoc()) {
-                            // echo "<div class='col-12'>";
-                            //     echo "<div class='question-card'>";
-                            //         echo "<h2>" . $row["QuestionTitle"] . "</h2>";
-                            //         echo "<p><strong>Summary:</strong> " . $row["QuestionBody"] . "</p>";
-                            //         if($row["questionImg"] !=NULL){
-                            //             echo "<img class='card-img-top' src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'><br>";
-                            //         }
-                            //         // echo "<button class='delete-btn' onclick='confirmDelete(" . $row["id"] . ")'>Delete</button>";
-                            //     echo "</div>";
-                            // echo "</div>";
-                            echo "<div class='card question-card mb-3'>";
-                                echo "<div class='row g-0'>";
-                                    echo "<div class='col-md-4'>";        
-                                        if($row["questionImg"] != NULL){
-                                            echo "<img class='img-fluid rounded-start'src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'>";
-                                        }            
-                                    echo "</div>";            
-                                    echo "<div class='col-md-8'>";            
-                                        echo "<div class='card-body'>";            
-                                            echo "<h5 class='card-title'>" . $row["QuestionTitle"] . "</h5>";           
-                                            echo "<p class='card-text'>" . $row["QuestionBody"] . "</p>";                
-                                            // echo " <p class='card-text'><small class='text-body-secondary'>Last updated 3 mins ago</small></p>";                
-                                        echo "</div>";               
-                                    echo "</div>";            
-                                echo "</div>";            
-                            echo "</div>";        
-                                
+                            echo "<div class='movie-card'>";
+                            echo "<h2>" . $row["QuestionTitle"] . "</h2>";
+                            // echo "<p><strong>Genre:</strong> " . $row["genre"] . "</p>";
+                            // echo "<p><strong>Release Date:</strong> " . $row["release_date"] . "</p>";
+                            echo "<p><strong>Question Body:</strong> " . $row["QuestionBody"] . "</p>";
+                            echo "<img src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'><br>";
+                            echo "<button class='delete-btn' onclick='confirmDelete(" . $row["id"] . ")'>Delete</button>";
+                            echo "</div>";
                         }
                     } else {
-                        echo "No questions found.";
+                        echo "No movies found.";
                     }
                     $conn->close();
-                ?>
+                    ?>
             </div>
         </div>
     </div>
