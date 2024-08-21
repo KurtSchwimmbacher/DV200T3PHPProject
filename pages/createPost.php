@@ -94,26 +94,7 @@ $result = $conn->query($sql);
                 </div>
             </div>
 
-            <div class="row">
-                    <?php
-                    // UserID, QuestionTitle, QuestionBody, questionImg, isApproved
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<div class='movie-card'>";
-                            echo "<h2>" . $row["QuestionTitle"] . "</h2>";
-                            // echo "<p><strong>Genre:</strong> " . $row["genre"] . "</p>";
-                            // echo "<p><strong>Release Date:</strong> " . $row["release_date"] . "</p>";
-                            echo "<p><strong>Question Body:</strong> " . $row["QuestionBody"] . "</p>";
-                            echo "<img src='../uploads/" . $row["questionImg"] . "' alt='" . $row["QuestionTitle"] . "'><br>";
-                            echo "<button class='delete-btn' onclick='confirmDelete(" . $row["id"] . ")'>Delete</button>";
-                            echo "</div>";
-                        }
-                    } else {
-                        echo "No movies found.";
-                    }
-                    $conn->close();
-                    ?>
-            </div>
+
         </div>
     </div>
 </main>

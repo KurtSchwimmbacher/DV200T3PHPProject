@@ -6,7 +6,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 
@@ -14,13 +14,22 @@ body{
 .main-content{
     margin-left: 200px;
   }
+
+
+.index-title-con{
+    width: 100vw;
+    margin-left: -5%;
+    background-image: url(../assets/Birdsong.png);
+    background-position: center;
+    background-size: cover;
+}
   
 .index-title{
-    width: 80%;
-    height: 70vh;
+    width: 100%;
     margin-left: 10%;
+    padding: 1%;
     font-family: "Shadows Into Light", cursive !important; 
-    font-weight: 800;
-    font-size: 60px;
-    color: #4A7A8C;
+    font-weight: 700;
+    font-size: 56px;
+    color: #faf9f6;
 }

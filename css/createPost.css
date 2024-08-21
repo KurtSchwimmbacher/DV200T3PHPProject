@@ -66,43 +66,8 @@ form{
     font-weight: 600 !important;
   }
 
-  .movie-card {
-    background-image: url("../assets/Medium_Box.png");
-    background-position: center;
-    background-size: cover;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 600px;
-    overflow: hidden;
-    padding: 20px;
-    text-align: left;
-}
-.movie-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-.movie-card h2 {
-    margin-top: 0;
-}
-.movie-card p {
-    margin: 10px 0;
-}
-.delete-btn {
-    background: #dc3545;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-.delete-btn:hover {
-    background: #c82333;
-}
+
+  
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
