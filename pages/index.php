@@ -3,7 +3,7 @@
 
 <!-- if logged in functionality -->
 <?php 
-session_start();
+require_once '../includes/config.php'; // Ensure this is at the very top
 
 if (!isset($_SESSION['username'])) {
     // Redirect if not logged in
@@ -16,10 +16,10 @@ if (!isset($_SESSION['username'])) {
 <link href="../css/header.css" rel="stylesheet">
 
 <main class="main-content">
-    <div class="col-12 index-title-con">
+    <div class="index-title-con">
         <h1 class="index-title">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
     </div>
-    
+
    <div class="container">
         <div class="row">
             

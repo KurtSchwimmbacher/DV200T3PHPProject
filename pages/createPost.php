@@ -3,8 +3,7 @@
 
 <!-- upload functionality -->
 <?php
-session_start(); // Start the session to access session variables
-require '../includes/config.php';
+require_once '../includes/config.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['userID'])) {

@@ -1,10 +1,12 @@
 <!-- includes/sidebar.php -->
-
+<?php
+require_once '../includes/config.php'; 
+?>
 
 <aside>
     <!-- link css file to style sidebar -->
     <link href="../css/sidebar.css" rel="stylesheet">
-    
+
     <nav class="nav-tag">
         <div class="sidebar">
             <div class="nav-brand">
@@ -15,7 +17,12 @@
             <a href="../pages/createPost.php">Post</a>
             <a href="#contact">Feed</a>
             <a href="#about">Browse</a>
-            
+
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 1): ?>
+                <!-- Admin link, shown only if the user is an admin -->
+                <a href="../pages/adminApprove.php">Admin Approve</a>
+            <?php endif; ?>
+
             <div class="nav-acount">
                 <a class="account active" href="../pages/login.php">
                     Account

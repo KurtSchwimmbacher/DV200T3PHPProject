@@ -3,8 +3,7 @@
 
 <!-- login functionality -->
 <?php 
-session_start();
-require '../includes/config.php';
+require_once '../includes/config.php'; '../includes/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input = $_POST['loginUsername']; // This could be either username or email
@@ -32,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Store user information in the session
             $_SESSION['userID'] = $user['id'];
             $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['admin'];
             // Redirect to home page
             header("Location: index.php");
             exit();
