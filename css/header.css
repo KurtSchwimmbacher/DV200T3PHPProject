@@ -1,7 +1,7 @@
 body{
     
     color: #faf9f6;
-    background-color: #faf9f6;
+    background-color: #2e2e2e;
     background-image: url(../assets/root_bg_lowOpacity.png);
     background-size: cover;
     background-position: center;
@@ -16,14 +16,14 @@ body{
   }
 
 
-.index-title-con{
+/* .index-title-con{
     width: 100vw;
     margin-left: -5%;
     background-image: url(../assets/Birdsong.png);
     background-position: center;
     background-size: cover;
 }
-  
+   */
 .index-title{
     width: 100%;
     margin-left: 10%;
