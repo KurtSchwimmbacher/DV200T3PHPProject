@@ -14,7 +14,7 @@ if (!isset($_SESSION['userID'])) {
 // Assign the user ID to variable
 $userID = $_SESSION['userID']; 
 // Default value for new questions
-$isApproved = 0; 
+$isApproved = "pending"; 
 
 // Handle form submission and question upload
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     // Execute the statement
     if ($stmt->execute()) {
         echo "<script>alert('Question uploaded successfully');</script>";
+        header("Location: ../pages/index.php");
     } else {
         echo "Error: " . $stmt->error;
     }
