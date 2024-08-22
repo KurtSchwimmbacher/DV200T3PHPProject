@@ -57,6 +57,13 @@ $result = $stmt->get_result();
                 <?php endwhile; ?>
             </div>
             <div class="col-md-4">
+                <div class="create-new-post">
+                <button class="btn btn-success vote-btn" data-action="dislike" >
+                    <a class="link-to-new-post" href="createPost.php">
+                        Create New Post
+                    </a>
+                </button>
+                </div>
                 <div class="activity-section">
                     <h4>Recent Activity</h4>
                     <ul class="list-group">
