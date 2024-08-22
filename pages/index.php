@@ -10,7 +10,8 @@ if (!isset($_SESSION['username'])) {
 
 // Fetch all approved questions with the number of replies
 $sql = "SELECT q.*, 
-               (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count 
+               (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
+               COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
         FROM questions q 
         WHERE q.isApproved = 'approved'";
 $result = $conn->query($sql);
@@ -26,6 +27,7 @@ $result = $conn->query($sql);
 <!-- link js -->
 <script src="../js/expandReply.js"></script>
 <script src="../js/loadReplies.js"></script>
+<script src="../js/vote.js"></script>
 
 <main class="main-content">
     <div class="index-title-con">
@@ -63,7 +65,10 @@ $result = $conn->query($sql);
                                     <button type="submit" class="btn btn-primary mt-2" style="display:none;">Post Answer</button>
                                 </form>
 
-
+                                <!-- Like/Dislike buttons -->
+                                <button class="btn btn-success vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Like</button>
+                                <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($row['QuestionID']); ?>"><?php echo $row['totalVotes']; ?></span>
+                                <button class="btn btn-danger vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Dislike</button>
                                 
                                 <!-- Section for displaying replies -->
                                 <div class="replies" id="replies-<?php echo htmlspecialchars($row['QuestionID']); ?>" style="display:none;">
