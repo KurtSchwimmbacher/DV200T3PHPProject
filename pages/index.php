@@ -22,7 +22,10 @@ $result = $conn->query($sql);
 
 <!-- link css -->
 <link href="../css/header.css" rel="stylesheet">
+
+<!-- link js -->
 <script src="../js/expandReply.js"></script>
+<script src="../js/loadReplies.js"></script>
 
 <main class="main-content">
     <div class="index-title-con">
@@ -42,8 +45,12 @@ $result = $conn->query($sql);
                                     <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
                                 <?php endif; ?>
 
-                                <!-- Display the number of replies -->
-                                <p><?php echo $row['reply_count']; ?> Replies</p>
+                                <!-- Display the number of replies with a clickable element -->
+                                <p>
+                                    <span class="reply-count" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">
+                                        <?php echo $row['reply_count']; ?> Replies
+                                    </span>
+                                </p>
 
                                 <!-- Reply form -->
                                 <form method="POST" action="../includes/postAnswers.php" class="mt-3">
@@ -55,6 +62,13 @@ $result = $conn->query($sql);
                                     <!-- Post Answer Button -->
                                     <button type="submit" class="btn btn-primary mt-2" style="display:none;">Post Answer</button>
                                 </form>
+
+
+                                
+                                <!-- Section for displaying replies -->
+                                <div class="replies" id="replies-<?php echo htmlspecialchars($row['QuestionID']); ?>" style="display:none;">
+                                    <!-- Replies will be dynamically loaded here -->
+                                </div>
                             </div>
                         </div>
                     </div>
