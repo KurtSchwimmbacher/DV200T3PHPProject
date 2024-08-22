@@ -32,7 +32,7 @@ $result = $stmt->get_result();
 
 <main class="main-content">
     <div class="index-title-con">
-        <h1 class="index-title">Your Feed</h1>
+        <h1 class="index-title">Your Activity</h1>
     </div>
 
     <div class="container">

@@ -2,11 +2,11 @@
 <?php 
 require_once '../includes/config.php'; // Ensure this is at the very top
 
-if (!isset($_SESSION['username'])) {
-    // Redirect if not logged in
-    header("Location: ../pages/login.php");
-    exit();
-}
+// if (!isset($_SESSION['username'])) {
+//     // Redirect if not logged in
+//     header("Location: ../pages/login.php");
+//     exit();
+// }
 
 // Fetch all approved questions with the number of replies
 $sql = "SELECT q.*, 
