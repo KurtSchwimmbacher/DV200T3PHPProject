@@ -15,7 +15,7 @@ require_once '../includes/config.php';
             <h3 class="brand-name">Forest<b class="green-tactics">Tactics</b></h3>
             <a class="" href="../pages/index.php">Home</a>
             <a href="../pages/createPost.php">Post</a>
-            <a href="#contact">Feed</a>
+            <a href="../pages/feed.php">Feed</a>
             <a href="#about">Browse</a>
 
             <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 1): ?>
