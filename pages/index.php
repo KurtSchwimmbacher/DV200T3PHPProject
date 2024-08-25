@@ -46,28 +46,22 @@ $result_liked = $stmt_liked->get_result();
             <?php if ($result_recent->num_rows > 0): ?>
                 <?php while($row = $result_recent->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
-                        <div class="card horizontal-card">
-                            <div class="row no-gutters">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
-                                            <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
-                                        </a>
-                                        <p class="card-text"><?php echo nl2br(htmlspecialchars($row['QuestionBody'])); ?></p>
-                                        
-                                        <!-- Display the number of replies -->
-                                        <p>
-                                            <span class="reply-count">
-                                                <?php echo $row['reply_count']; ?> Replies
-                                            </span>
-                                        </p>
-
-                                        <!-- Like/Dislike buttons -->
-                                        <button class="btn btn-success vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Like</button>
-                                        <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($row['QuestionID']); ?>"><?php echo $row['totalVotes']; ?></span>
-                                        <button class="btn btn-danger vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Dislike</button>
-                                    </div>
-                                </div>
+                    <div class="card">
+                            <?php if ($row['questionImg']): ?>
+                                <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                            <?php endif; ?>
+                            <div class="card-body">
+                                <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
+                                </a>
+                                <p class="card-text"><?php echo nl2br(htmlspecialchars($row['QuestionBody'])); ?></p>
+                                            
+                                <!-- Display the number of replies -->
+                                <p>
+                                    <span class="reply-count">
+                                        <?php echo $row['reply_count']; ?> Replies
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -83,28 +77,22 @@ $result_liked = $stmt_liked->get_result();
             <?php if ($result_liked->num_rows > 0): ?>
                 <?php while($row = $result_liked->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
-                        <div class="card horizontal-card">
-                            <div class="row no-gutters">
-                                <div class="col-md-12">
-                                    <div class="card-body">
-                                        <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
-                                            <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
-                                        </a>
-                                        <p class="card-text"><?php echo nl2br(htmlspecialchars($row['QuestionBody'])); ?></p>
-                                        
-                                        <!-- Display the number of replies -->
-                                        <p>
-                                            <span class="reply-count">
-                                                <?php echo $row['reply_count']; ?> Replies
-                                            </span>
-                                        </p>
-
-                                        <!-- Like/Dislike buttons -->
-                                        <button class="btn btn-success vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Like</button>
-                                        <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($row['QuestionID']); ?>"><?php echo $row['totalVotes']; ?></span>
-                                        <button class="btn btn-danger vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Dislike</button>
-                                    </div>
-                                </div>
+                        <div class="card">
+                            <?php if ($row['questionImg']): ?>
+                                <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                            <?php endif; ?>
+                            <div class="card-body">
+                                <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
+                                </a>
+                                <p class="card-text"><?php echo nl2br(htmlspecialchars($row['QuestionBody'])); ?></p>
+                                            
+                                <!-- Display the number of replies -->
+                                <p>
+                                    <span class="reply-count">
+                                        <?php echo $row['reply_count']; ?> Replies
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
