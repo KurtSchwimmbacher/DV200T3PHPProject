@@ -3,8 +3,8 @@
     <defs>
 
         <filter id="combined">
-            <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="4" />
-            <feDisplacementMap in="SourceGraphic" scale="8" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="64" />
+            <feDisplacementMap in="SourceGraphic" scale="16" />
         </filter>
     </defs>
 </svg>

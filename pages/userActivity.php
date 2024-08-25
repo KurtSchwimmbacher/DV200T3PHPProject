@@ -40,12 +40,14 @@ $result = $stmt->get_result();
             <div class="col-md-8">
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="card mb-3">
+                        
                         <div class="row g-0">
                             <div class="col-md-8">
+                            <div class="filtered-bg"></div>
                                 <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="singleQuestion.php?id=<?= $row['QuestionID'] ?>"><?= htmlspecialchars($row['QuestionTitle']) ?></a>
-                                    </h5>
+                                    <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
+                                        <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
+                                    </a>
                                     <p class="card-text"><?= htmlspecialchars($row['QuestionBody']) ?></p>
                                     <p class="card-text">
                                         <small class="text-muted">Replies: <?= $row['reply_count'] ?> | Votes: <?= $row['totalVotes'] ?></small>
@@ -81,4 +83,6 @@ $result = $stmt->get_result();
     </div>
 </main>
 
+
+<?php include '../includes/filters.php'; ?>
 <?php include '../includes/footer.php'; ?>

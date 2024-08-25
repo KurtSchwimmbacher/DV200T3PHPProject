@@ -46,20 +46,20 @@ $result_liked = $stmt_liked->get_result();
     <div class="container">
         <!-- Most Recent Posts -->
         <div class="row mb-4">
-            <h2>Most Recent Posts</h2>
+            <h2 class="home-pg-titles">Most Recent Posts</h2>
             <?php if ($result_recent->num_rows > 0): ?>
                 <?php while($row = $result_recent->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
 
                         <div class="card">
                             <div class="filtered-bg"></div>
-                            <p class="card-text card-username">
-                                <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
-                            </p>
                             <?php if ($row['questionImg']): ?>
                                 <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
                             <?php endif; ?>
                             <div class="card-body">
+                                <p class="card-text card-username">
+                                    <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
+                                </p>
                                 <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                 </a>
@@ -81,20 +81,21 @@ $result_liked = $stmt_liked->get_result();
 
         <!-- Most Liked Posts -->
         <div class="row mb-4">
-            <h2>Most Liked Posts</h2>
+            <h2 class="home-pg-titles">Most Liked Posts</h2>
             <?php if ($result_liked->num_rows > 0): ?>
                 <?php while($row = $result_liked->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card">
                         <div class="filtered-bg"></div>
-                        <!-- display username -->
-                        <p class="card-text card-username">
-                            <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
-                        </p>
+                        
                             <?php if ($row['questionImg']): ?>
                                 <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
                             <?php endif; ?>
                             <div class="card-body">
+                                <!-- display username -->
+                                <p class="card-text card-username">
+                                    <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
+                                </p>
                                 <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                 </a>

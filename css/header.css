@@ -41,15 +41,16 @@ a{
 
 .card {
     width: 100%;
+    /* height: 100%; */
     position: relative;
     overflow: hidden;
     font-family: "Shadows Into Light", cursive;
     font-weight: 800 !important;
     color: #2e2e2e;
-    /* border: 2px solid #2e2e2e; */
+    border: none !important;
     z-index: 1;
     background-color: #00000000;
-    border: none;
+    box-shadow: -6px 10px 8px 0px #2E2E2E40;
 }
 
 .filtered-bg {
@@ -72,6 +73,13 @@ a{
 }
 
 
-.card-username{
+.card-img-top{
     padding: 2%;
+    border-radius: 15px;
+}
+
+.home-pg-titles{
+    font-family: "Shadows Into Light", cursive !important;
+    font-weight: 800 !important;
+    margin-bottom: 2vh;
 }
