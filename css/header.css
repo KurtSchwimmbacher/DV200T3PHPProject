@@ -26,10 +26,52 @@ body{
    */
 .index-title{
     width: 100%;
-    margin-left: 10%;
+    margin-left: 0%;
     padding: 1%;
     font-family: "Shadows Into Light", cursive !important; 
     font-weight: 700;
     font-size: 56px;
     color: #faf9f6;
+}
+
+a{
+    text-decoration: none !important;
+    color: #2e2e2e;
+}
+
+.card {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 800 !important;
+    color: #2e2e2e;
+    /* border: 2px solid #2e2e2e; */
+    z-index: 1;
+    background-color: #00000000;
+    border: none;
+}
+
+.filtered-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FAE5B3;
+    filter: url(#combined);
+    z-index: -1;
+}
+
+.card-home .card-body, 
+.card-home .card-text, 
+.card-home .card-title, 
+.card-home .reply-count {
+    position: relative;
+    z-index: 2;
+}
+
+
+.card-username{
+    padding: 2%;
 }

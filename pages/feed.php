@@ -39,6 +39,7 @@ $result = $conn->query($sql);
                 <?php while($row = $result->fetch_assoc()): ?>
                     <div class="col-md-12 mb-4">
                         <div class="card horizontal-card">
+                            
                             <div class="row no-gutters">
                                 <!-- <div class="col-md-4">
                                     <?php if ($row['questionImg']): ?>
@@ -46,6 +47,7 @@ $result = $conn->query($sql);
                                     <?php endif; ?>
                                 </div> -->
                                 <div class="col-md-8">
+                                    <div class="filtered-bg"></div>
                                     <div class="card-body">
                                         <!-- Display the username -->
                                         <p class="card-text">
@@ -80,4 +82,5 @@ $result = $conn->query($sql);
     </div>
 </main>
 
+<?php include '../includes/filters.php'; ?>
 <?php include '../includes/footer.php'; ?>

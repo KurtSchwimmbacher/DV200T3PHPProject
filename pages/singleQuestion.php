@@ -56,8 +56,9 @@ $repliesResult = $stmt_replies->get_result();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card mt-5">
                     <div class="card-body">
+                        <div class="filtered-bg"></div>
                         <!-- display username -->
                         <p class="card-text">
                             <small class="text-muted"><?php echo htmlspecialchars($question['username']) ?></small>
@@ -111,4 +112,5 @@ $repliesResult = $stmt_replies->get_result();
     </div>
 </main>
 
+<?php include '../includes/filters.php'; ?>
 <?php include '../includes/footer.php'; ?>
