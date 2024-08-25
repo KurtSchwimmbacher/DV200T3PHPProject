@@ -3,9 +3,11 @@ require_once '../includes/config.php'; // Ensure this is at the very top
 
 // Fetch the 6 most recent posts
 $sql_recent = "SELECT q.*, 
+                        u.username,
                       (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
                       COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
                FROM questions q 
+               JOIN users u on q.UserID = u.id
                WHERE q.isApproved = 'approved'
                ORDER BY q.createdAt DESC
                LIMIT 6";
@@ -15,9 +17,11 @@ $result_recent = $stmt_recent->get_result();
 
 // Fetch the 6 most liked posts
 $sql_liked = "SELECT q.*, 
+                    u.username,
                      (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
                      COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
               FROM questions q 
+              JOIN users u on q.UserID = u.id
               WHERE q.isApproved = 'approved'
               ORDER BY totalVotes DESC
               LIMIT 6";
@@ -47,6 +51,10 @@ $result_liked = $stmt_liked->get_result();
                 <?php while($row = $result_recent->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
                     <div class="card">
+                        <!-- display username -->
+                        <p class="card-text">
+                            <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
+                        </p>
                             <?php if ($row['questionImg']): ?>
                                 <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
                             <?php endif; ?>
@@ -78,6 +86,10 @@ $result_liked = $stmt_liked->get_result();
                 <?php while($row = $result_liked->fetch_assoc()): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card">
+                        <!-- display username -->
+                        <p class="card-text">
+                            <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
+                        </p>
                             <?php if ($row['questionImg']): ?>
                                 <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
                             <?php endif; ?>
