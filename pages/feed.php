@@ -27,7 +27,7 @@ $result = $conn->query($sql);
 
 <main class="main-content">
     <div class="index-title-con">
-        <h1 class="index-title">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+        <h1 class="index-title">Feed</h1>
     </div>
 
     <div class="container">
