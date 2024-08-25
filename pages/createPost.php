@@ -14,7 +14,7 @@ if (!isset($_SESSION['userID'])) {
 // Assign the user ID to variable
 $userID = $_SESSION['userID']; 
 // Default value for new questions
-$isApproved = "pending"; 
+$isApproved = 1; 
 
 // Handle form submission and question upload
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {

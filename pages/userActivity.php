@@ -50,6 +50,9 @@ $result = $stmt->get_result();
                                     <p class="card-text">
                                         <small class="text-muted">Replies: <?= $row['reply_count'] ?> | Votes: <?= $row['totalVotes'] ?></small>
                                     </p>
+                                    <!-- Update and Delete Buttons -->
+                                    <a href="../includes/updatePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-primary">Update</a>
+                                    <a href="../includes/deletePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?');">Delete</a>
                                 </div>
                             </div>
                         </div>
