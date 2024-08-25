@@ -10,10 +10,13 @@ if (!isset($_SESSION['username'])) {
 
 // Fetch all approved questions with the number of replies
 $sql = "SELECT q.*, 
+               u.username,
                (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
                COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
         FROM questions q 
+        JOIN users u ON q.UserID = u.id
         WHERE q.isApproved = 'approved'";
+
 $result = $conn->query($sql);
 ?>
 
@@ -44,6 +47,10 @@ $result = $conn->query($sql);
                                 </div> -->
                                 <div class="col-md-8">
                                     <div class="card-body">
+                                        <!-- Display the username -->
+                                        <p class="card-text">
+                                            <small class="text-muted"><?php echo htmlspecialchars($row['username']); ?></small>
+                                        </p>
                                         <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                             <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                         </a>

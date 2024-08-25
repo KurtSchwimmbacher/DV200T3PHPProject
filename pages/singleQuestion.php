@@ -18,9 +18,11 @@ if (!isset($_GET['questionID'])) {
 $questionID = intval($_GET['questionID']);
 
 // Fetch the specific question
-$sql = "SELECT q.*, 
+$sql = "SELECT q.*,
+                u.username,
                (SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)) as totalVotes
         FROM questions q 
+        JOIN users u on q.UserID = u.id
         WHERE q.QuestionID = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $questionID);
@@ -56,6 +58,10 @@ $repliesResult = $stmt_replies->get_result();
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
+                        <!-- display username -->
+                        <p class="card-text">
+                            <small class="text-muted"><?php echo htmlspecialchars($question['username']) ?></small>
+                        </p>
                         <h3 class="card-title"><?php echo htmlspecialchars($question['QuestionTitle']); ?></h3>
                         <p class="card-text"><?php echo nl2br(htmlspecialchars($question['QuestionBody'])); ?></p>
                         <?php if ($question['questionImg']): ?>
