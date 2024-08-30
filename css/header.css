@@ -83,3 +83,13 @@ a{
     font-weight: 800 !important;
     margin-bottom: 2vh;
 }
+
+.vote-btn{
+    color: #2F4F2F;
+    font-weight: 800 !important;
+}
+
+.btn-post-reply{
+    color: #2F4F2F;
+    font-weight: 800 !important;
+}

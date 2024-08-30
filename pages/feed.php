@@ -66,9 +66,9 @@ $result = $conn->query($sql);
                                         </p>
 
                                         <!-- Like/Dislike buttons -->
-                                        <button class="btn btn-success vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Like</button>
+                                        <button class="btn btn-like vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>"><i class="bi bi-arrow-up"></i></button>
                                         <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($row['QuestionID']); ?>"><?php echo $row['totalVotes']; ?></span>
-                                        <button class="btn btn-danger vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>">Dislike</button>
+                                        <button class="btn btn-dislike vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($row['QuestionID']); ?>"><i class="bi bi-arrow-down"></i></button>
                                     </div>
                                 </div>
                             </div>

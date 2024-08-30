@@ -60,6 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 }
 ?>
 
+<!-- link css -->
+<link href="../css/createPost.css" rel="stylesheet">
+
 <main>
     <div class="main-content">
         <div class="container">
@@ -69,10 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                         <h1 class="new-post-title mb-4">&#160Update Your Post&#160</h1>
                         <form class="new-post-form" action="updatePost.php?id=<?= $questionID ?>" method="post" enctype="multipart/form-data">
                             <div class="mt-4">
-                                <input type="text" class="form-control " id="questionTitle" name="questionTitle" value="<?= htmlspecialchars($question['QuestionTitle']) ?>" required>
+                                <input type="text" class="form-control" id="questionTitle" name="questionTitle" 
+                                    placeholder="Question Title" 
+                                    value="<?= htmlspecialchars($question['QuestionTitle']) ?>" required>
                             </div>
                             <div class="mt-4">
-                                <textarea class="form-control question-text" id="questionDesc" name="questionDesc" required><?= htmlspecialchars($question['QuestionBody']) ?></textarea>
+                                <textarea class="form-control question-text" id="questionDesc" name="questionDesc" 
+                                    placeholder="Describe your question" required><?= htmlspecialchars($question['QuestionBody']) ?></textarea>
                             </div>
                             <div class="mt-4">
                                 <input class="form-control file-upload" type="file" id="questionPicture" name="picture">
@@ -87,5 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         </div>
     </div>
 </main>
+
 
 <?php include '../includes/footer.php'; ?>

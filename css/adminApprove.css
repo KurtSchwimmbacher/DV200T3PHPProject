@@ -2,3 +2,13 @@
 .main-content{
     margin-left: 200px;
 }
+
+.admin-approve-title{
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 600;
+}
+
+.btn-approve ,.btn-deny{
+    color: #4A7A8C !important;
+    font-weight: 800 !important;
+}

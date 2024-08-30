@@ -70,9 +70,16 @@ $repliesResult = $stmt_replies->get_result();
                         <?php endif; ?>
                         
                         <!-- Like/Dislike buttons -->
-                        <button class="btn btn-success vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">Like</button>
-                        <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($question['QuestionID']); ?>"><?php echo $question['totalVotes']; ?></span>
-                        <button class="btn btn-danger vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">Dislike</button>
+                        <button class="btn vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">
+                            <i class="bi bi-arrow-up"></i> <!-- Added closing tag -->
+                        </button>
+                        <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($question['QuestionID']); ?>">
+                            <?php echo $question['totalVotes']; ?>
+                        </span>
+                        <button class="btn vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">
+                            <i class="bi bi-arrow-down"></i> <!-- Added closing tag -->
+                        </button>
+
 
                         <hr>
                         
@@ -82,11 +89,6 @@ $repliesResult = $stmt_replies->get_result();
                                 <div class="reply">
                                     <p><strong><?php echo htmlspecialchars($reply['username']); ?>:</strong> <?php echo nl2br(htmlspecialchars($reply['AnswerContent'])); ?></p>
                                     <p>Posted on: <?php echo htmlspecialchars($reply['postedTime']); ?></p>
-                                    
-                                    <!-- Like/Dislike buttons for replies -->
-                                    <!-- <button class="btn btn-success vote-btn" data-action="like" data-answer-id="<?php echo htmlspecialchars($reply['AnswerID']); ?>">Like</button>
-                                    <span class="vote-count" id="vote-count-reply-<?php echo htmlspecialchars($reply['AnswerID']); ?>"><?php echo $reply['totalVotes']; ?></span>
-                                    <button class="btn btn-danger vote-btn" data-action="dislike" data-answer-id="<?php echo htmlspecialchars($reply['AnswerID']); ?>">Dislike</button> -->
 
                                     <hr>
                                 </div>
@@ -103,7 +105,7 @@ $repliesResult = $stmt_replies->get_result();
                             <textarea class="form-control reply-field" name="answerContent" placeholder="Write your reply..." rows="3" required></textarea>
                                                     
                             <!-- Post Answer Button -->
-                            <button type="submit" class="btn btn-primary mt-2">Post Reply</button>
+                            <button type="submit" class="btn btn-post-reply mt-2">Post Reply</button>
                         </form>
                     </div>
                 </div>

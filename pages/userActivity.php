@@ -25,7 +25,7 @@ $result = $stmt->get_result();
 <?php include '../includes/header.php'; ?>
 
 <!-- link css -->
-<!-- <link href="../css/header.css" rel="stylesheet"> -->
+<link href="../css/userActivity.css" rel="stylesheet">
 
 <!-- link js -->
 <script src="../js/vote.js"></script>
@@ -53,8 +53,8 @@ $result = $stmt->get_result();
                                         <small class="text-muted">Replies: <?= $row['reply_count'] ?> | Votes: <?= $row['totalVotes'] ?></small>
                                     </p>
                                     <!-- Update and Delete Buttons -->
-                                    <a href="../includes/updatePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-primary">Update</a>
-                                    <a href="../includes/deletePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?');">Delete</a>
+                                    <a href="../includes/updatePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-update">Update</a>
+                                    <a href="../includes/deletePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this question?');">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -63,15 +63,15 @@ $result = $stmt->get_result();
             </div>
             <div class="col-md-4">
                 <div class="create-new-post">
-                <button class="btn btn-success vote-btn" data-action="dislike" >
+                <button class="btn btn-new-post mb-3 vote-btn" data-action="dislike" >
                     <a class="link-to-new-post" href="createPost.php">
                         Create New Post
                     </a>
                 </button>
                 </div>
                 <div class="activity-section">
-                    <h4>Recent Activity</h4>
-                    <ul class="list-group">
+                    <h2 class="recent-activity-title mb-2">Recent Activity</h2>
+                    <ul class="list-group-feed">
                         <!-- Example static activity list items -->
                         <li class="list-group-item">You replied to a question</li>
                         <li class="list-group-item">You upvoted an answer</li>

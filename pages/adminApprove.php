@@ -10,7 +10,12 @@ if (!isset($_SESSION['userID']) || $_SESSION['role'] !== 1) {
 }
 
 // Fetch all questions awaiting approval
-$sql = "SELECT * FROM questions WHERE isApproved = 'pending'";
+$sql = "SELECT q.*, 
+               u.username
+        FROM questions q 
+        JOIN users u ON q.UserID = u.id
+        WHERE q.isApproved = 'pending'";
+
 $result = $conn->query($sql);
 
 // Handle approval or denial
@@ -56,13 +61,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Questions Awaiting Approval</h1>
+                    <h1 class="admin-approve-title mt-3 mb-3">Questions Awaiting Approval</h1>
                 </div>
                 <?php if ($result->num_rows > 0): ?>
                     <?php while($row = $result->fetch_assoc()): ?>
                         <div class="col-md-4 mb-4">
                             <div class="card">
+                            <div class="filtered-bg"></div>
                                 <div class="card-body">
+                                    <!-- Display the username -->
+                                    <p class="card-text">
+                                        <small class="text-muted"><?php echo htmlspecialchars($row['username']); ?></small>
+                                    </p>
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                     <p class="card-text"><?php echo nl2br(htmlspecialchars($row['QuestionBody'])); ?></p>
                                     <?php if ($row['questionImg']): ?>
@@ -70,8 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <?php endif; ?>
                                     <form method="POST" action="adminApprove.php" class="mt-3">
                                         <input type="hidden" name="questionID" value="<?= htmlspecialchars($row['QuestionID']); ?>">
-                                        <button type="submit" name="approve" class="btn btn-success">Approve</button>
-                                        <button type="submit" name="deny" class="btn btn-danger">Deny</button>
+                                        <button type="submit" name="approve" class="btn btn-approve">Approve</button>
+                                        <button type="submit" name="deny" class="btn btn-deny">Deny</button>
                                     </form>
                                 </div>
                             </div>
@@ -84,4 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </main>
+
+<?php include '../includes/filters.php'; ?>
 <?php include '../includes/footer.php'; ?>

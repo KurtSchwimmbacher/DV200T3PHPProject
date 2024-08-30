@@ -83,7 +83,7 @@ $result = $conn->query($sql);
                                 <textarea class="form-control question-text" id="questionDesc" name="questionDesc" placeholder="Describe your question" required></textarea>
                             </div>
                             <div class="mt-4">
-                                <input class="form-control file-upload" type="file" id="questionPicture" name="picture">
+                                <input class="form-control file-upload" type="file" id="questionPicture" name="picture" required>
                             </div>
                             <div class="mt-4">
                                 <input type="submit" class="btn btn-post" name="submit" value="Upload">
