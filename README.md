@@ -1,4 +1,4 @@
-![ClearView Header Image]()
+![ClearView Header Image](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/vagabond_logo.png)
 
 - - - -
 
