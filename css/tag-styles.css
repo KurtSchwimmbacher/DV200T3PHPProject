@@ -1,0 +1,20 @@
+/* tag-styles.css */
+.badge-new-to-game {
+    background-color: #007bff; /* Example color */
+    color: #fff;
+}
+
+.badge-advice {
+    background-color: #28a745; /* Example color */
+    color: #fff;
+}
+
+.badge-help {
+    background-color: #ffc107; /* Example color */
+    color: #000;
+}
+
+.badge-default {
+    background-color: #6c757d; /* Example color */
+    color: #fff;
+}

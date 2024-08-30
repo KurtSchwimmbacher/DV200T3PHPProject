@@ -41,7 +41,7 @@ a{
 
 .card {
     width: 100%;
-    /* height: 100%; */
+
     position: relative;
     overflow: hidden;
     font-family: "Shadows Into Light", cursive;
@@ -76,6 +76,7 @@ a{
 .card-img-top{
     padding: 2%;
     border-radius: 15px;
+    height: 50vh !important;
 }
 
 .home-pg-titles{
@@ -93,3 +94,4 @@ a{
     color: #2F4F2F;
     font-weight: 800 !important;
 }
+
