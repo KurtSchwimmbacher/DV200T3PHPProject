@@ -115,7 +115,7 @@ The idea was to create a centralised hub where students can post questions or ju
 ## UI Design
 
 ### Home Page
-![Home Page UI Design]
+![Home Page UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Home-Design.png)
 
 ### Create Post Page
 
