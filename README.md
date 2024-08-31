@@ -103,14 +103,19 @@ Go to http://localhost/your-project-folder/.
 |                       | - Provides login functionality for registered users |
 | Home Page             | - Allows users to see the latest posts              |
 |                       | - Allows users to see the top liked posts |
+|                       | - Allows users search for posts, filter by tags, and sort questions |
 | Feed Page             | - Allows users to see all the latest posts and questions from other users |
 | Create Post Page      | - Allows users to create new posts               |
 | Individual Post Page  | - Allows students to view the whole post           |
 |                       | - Provides the ability to comment and vote on posts |
+| Account Activity Page  | - Provides users with their profile information, such as total posts |
+|                       | - Allows users to see their past questions and answers |
+|                       | - Provides users with a log of activity happening on their posts |
+|                       | - Allows users to change their profile pictures |
 
 ## The Idea
 
-The idea was to create a centralised hub where students can post questions or just share anything that they find interesting or inspirations and have other students engage with the post to either help them or just say thank you.
+The idea was to create a centralised hub where users can post questions regarding help, strategy, or advice regarding the boardgame Root and have other users engage with the post to either help them as well as vote on questions.
 
 ## UI Design
 
@@ -150,27 +155,30 @@ The idea was to create a centralised hub where students can post questions or ju
 * Highlights of the website is the stylised UI and the functionality that gives the user a pleasant user experience.
 * The website is easy to understand and navigate.
 
-### Challenges
 
+### Challenges
+* The integration of votes, comments and answers on posts was challenging to implement in a cohesive and intuitive way.
+* Building in redundancy to the functionality of the website to ensure a smooth user experience.
 
 ## Future Implementations
 
 * Allow Users to view other user Profiles
 * Add super admin functionality that allows Admins to post announcements to the home page
+* Allow users to create new tags or subcommunites for more specific questions
 
 ## Mockups
 
-### Profile Mockup
-![Forest Tactics Mockup 1](https://github.com/JugheadStudio/Github-assets/blob/main/Interro/1.jpg?raw=true)
+### Account Mockup
+![Account Mockup](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Mockup-Account.png)
 
-### Browse Page Mockup
-
+### Feed Page Mockup
+![Account Mockup](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Mockup-Feed.png)
 
 ### Individual Post Page Mockup
-
+![Individual Post Mockup](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Mockup-Single-Post.png)
 
 ### Home Page Mockup
-
+![Home Page Mockup](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Mockup-Home.png)
 
 ## Demonstration
 [Link To Demonstration Video]
