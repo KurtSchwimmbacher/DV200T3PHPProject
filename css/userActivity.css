@@ -36,3 +36,68 @@
     font-size: 18px;
     border-bottom: 1px solid #faf9f6;
 }
+
+
+/* user info */
+/* ====================================================================== */
+.user-activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.user-profile {
+    margin-bottom: 20px;
+}
+    
+.profile-picture {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+    
+.user-stats p {
+    margin: 5px 0;
+}
+
+
+/* modal */
+/* ====================================================================== */
+
+.modal-content{
+    background-color: #4A7A8C;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 800;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-body{
+    display: flex;
+    justify-content: center;
+}
+
+.update-pfp-modal{
+    color: #FAF9F6 !important;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 600;
+}
+
+.btn-change-pfp{
+    color: #FAF9F6 !important;
+    background-color: #2F4F2F !important;
+    width: 100%;
+}
+
+.profile-picture-input{
+    margin-left: 30%;
+    width: 40% !important;
+    height: auto;
+    border-radius: 100%;
+    justify-content: center;
+}

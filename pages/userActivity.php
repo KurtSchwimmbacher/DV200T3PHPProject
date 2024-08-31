@@ -24,6 +24,8 @@ $result = $stmt->get_result();
 
 <?php include '../includes/header.php'; ?>
 
+
+
 <!-- link css -->
 <link href="../css/userActivity.css" rel="stylesheet">
 
@@ -31,6 +33,7 @@ $result = $stmt->get_result();
 <script src="../js/vote.js"></script>
 
 <main class="main-content">
+    <?php include '../includes/user_activity.php'; ?>
     <div class="index-title-con">
         <h1 class="index-title">Your Activity</h1>
     </div>

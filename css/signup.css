@@ -3,36 +3,43 @@
 
 
 .btn-logIn{
-    width: 60%;
-    margin-left: 20%;
-    background-color: #C9B754 !important;
-    border-radius: 25px !important;
-    color: #FBFDFC !important;
-  }
+  width: 60%;
+  margin-left: 20%;
+  background-color: #C9B754 !important;
+  border-radius: 25px !important;
+  color: #FBFDFC !important;
+}
   
-  .btn-signup{
-    width: 100% !important;
-    background-color: #4A7A8C !important;
-    color: #faf9f6 !important;
-  }
+.btn-signup{
+  width: 100% !important;
+  background-color: #4A7A8C !important;
+  color: #faf9f6 !important;
+}
 
-  .btn-signUp{
-    width: 60%;
-    margin-left: 20%;
-    background-color: #799179!important;
-    border-radius: 25px !important;
-    color: #FAF9F6 !important;
-    font-family: "Shadows Into Light", cursive !important; 
-  }
+.btn-signUp{
+  width: 60%;
+  margin-left: 20%;
+  background-color: #799179!important;
+  border-radius: 25px !important;
+  color: #FAF9F6 !important;
+  font-family: "Shadows Into Light", cursive !important; 
+}
   
-  .signup-con{
-    background-image: url("../assets/Medium_Box.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 4%;
-  }
+.signup-con{
+  background-image: url("../assets/Medium_Box.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 4%;
+}
 
 
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+}
 
 

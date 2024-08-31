@@ -4,7 +4,6 @@
 
 <!-- sign up functionality -->
 <?php 
-
 require_once '../includes/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,13 +14,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash the password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare the SQL statement
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    // File upload handling
+    $profilePicture = $_FILES['profilePicture'];
+    $profilePicturePath = '';
+
+    if ($profilePicture['error'] === UPLOAD_ERR_OK) {
+        // Define the upload directory
+        $uploadDir = '../uploads/profile_pictures/';
+        // Create the directory if it does not exist
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+        // Generate a unique file name
+        $profilePicturePath = $uploadDir . uniqid() . '_' . basename($profilePicture['name']);
+        // Move the uploaded file to the upload directory
+        if (!move_uploaded_file($profilePicture['tmp_name'], $profilePicturePath)) {
+            echo "Error uploading profile picture.";
+            exit;
+        }
+    } else {
+        // Set default profile picture if no file is uploaded
+        $profilePicturePath = 'default_profile.png';
+    }
+
+    // Prepare the SQL statement with profile picture
+    $sql = "INSERT INTO users (username, email, password, profile_picture) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $hashedPassword);
+    $stmt->bind_param("ssss", $username, $email, $hashedPassword, $profilePicturePath);
 
     if ($stmt->execute()) {
-        // echo "Registration Complete";
+        // Registration success
+        // Optionally, you can redirect the user to a login page or home page
+        header('Location: login.php');
+        exit;
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -30,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
 
 
 <!-- link css -->
@@ -44,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-12 mt-3">
                 <div class="signup-con mt-5">
                     <h1 class="login-title mb-4">&#16Sign Up&#16</h1>
-                    <form class="login-form" action="" method="POST" onsubmit="return validateForm()">
+                    <form class="login-form" action="" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                         <div class="mt-3">
                             <input type="text" class="form-control" name="signUpUsername" id="signUpUsername" placeholder="Username" required>
                         </div>
@@ -57,8 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="mt-3">
                             <input type="password" class="form-control" id="signUpPasswordConfirm" placeholder="Confirm Password" required>
                         </div>
+                        <div class="mt-3">
+                            <input type="file" class="form-control" name="profilePicture" id="profilePicture" accept="image/*">
+                        </div>
                         <button type="submit" class="btn btn-signup mt-3">Sign Up</button>
                     </form>
+
 
                     <div class="login-form-extent mt-4 mb-1">
                         <p class="no-account-text">&#160OR&#160</p>
