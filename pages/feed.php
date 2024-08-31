@@ -88,43 +88,50 @@ $result = $conn->query($sql);
     </div>
 
     <div class="container">
-
-        <div class="row">
-            <div class="col-12">
+        <div class="row mb-5">
+            <div class="col-4">
                 <form id="filter-form">
                     <div class="form-group">
                         <label for="search">Search:</label>
-                        <input type="text" id="search" name="search" class="form-control" placeholder="Search questions" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-search"></i></div>
+                            <input type="text" id="search" name="search" class="form-control feed-search" placeholder="Search questions" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                        </div>
+                        
                     </div>
                     <div class="form-group">
                         <label for="sort">Sort By:</label>
-                        <select id="sort" name="sort" class="form-select">
-                            <option value="date_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_desc') ? 'selected' : ''; ?>>Date (Newest First)</option>
-                            <option value="date_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_asc') ? 'selected' : ''; ?>>Date (Oldest First)</option>
-                            <option value="votes_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_desc') ? 'selected' : ''; ?>>Votes (Highest First)</option>
-                            <option value="votes_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_asc') ? 'selected' : ''; ?>>Votes (Lowest First)</option>
+                        <select id="sort" name="sort" class="form-select sort-select ">
+                            <option class="sort-opt" value="date_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_desc') ? 'selected' : ''; ?>>Date desc</option>
+                            <option class="sort-opt" value="date_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_asc') ? 'selected' : ''; ?>>Date asc</option>
+                            <option class="sort-opt" value="votes_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_desc') ? 'selected' : ''; ?>>Votes desc</option>
+                            <option class="sort-opt" value="votes_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_asc') ? 'selected' : ''; ?>>Votes asc</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="tags">Filter by Tags:</label>
-                        <select id="tags" name="tags[]" class="form-select">
-                            <option value="all">All</option>
-                            <?php
-                            $availableTags = ['New to Game', 'Advice', 'Help', 'Rules', 'Strategy'];
-                            foreach ($availableTags as $tag): 
-                                $selected = isset($_GET['tags']) && in_array($tag, $_GET['tags']) ? 'selected' : '';
-                            ?>
-                                <option value="<?php echo htmlspecialchars($tag); ?>" <?php echo $selected; ?>>
-                                    <?php echo htmlspecialchars($tag); ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <!-- <button type="submit" class="btn btn-primary">Apply</button> -->
+                            <label for="tags"><i class="bi bi-filter"></i> Filter by Tags:</label>
+                            <select id="tags" name="tags[]" class="form-select filter-select ">
+                                <option class="filter-opt" value="all">All</option>
+                                <?php
+                                $availableTags = ['New to Game', 'Advice', 'Help', 'Rules', 'Strategy'];
+                                foreach ($availableTags as $tag): 
+                                    $selected = isset($_GET['tags']) && in_array($tag, $_GET['tags']) ? 'selected' : '';
+                                ?>
+                                    <option class="filter-opt" value="<?php echo htmlspecialchars($tag); ?>" <?php echo $selected; ?>>
+                                        <?php echo htmlspecialchars($tag); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                 </form>
-            </div>  
+            </div>
         </div>
 
+        <div class="row mt-2 mb-3">
+            <div class="col-4">
+            </div>
+        </div>
+            
 
         <div id="results" class="row">
             <?php if ($result->num_rows > 0): ?>

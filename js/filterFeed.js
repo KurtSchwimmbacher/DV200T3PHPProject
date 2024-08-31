@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     function fetchResults() {
         $.ajax({
             url: '../pages/feed.php', // Adjust this to your actual PHP script URL
@@ -19,3 +20,4 @@ $(document).ready(function() {
     // Initialize fetchResults on page load to show default results
     fetchResults();
 });
+

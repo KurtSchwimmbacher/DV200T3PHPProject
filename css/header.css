@@ -108,3 +108,42 @@ a{
     pointer-events: none;
     border: none;
 }
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    font-family: "Shadows Into Light", cursive !important;
+    font-weight: 800 !important;
+}
+
+.feed-search ,.feed-search:after, .feed-search:focus{
+    background-color: #faf9f6;
+    color: #2F4F2F !important;
+    border: none;
+}
+
+.feed-search:focus, .sort-select:focus ,.filter-select:focus{
+    border: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #2f4f2f69;
+    outline: 0 none;
+}
+
+.input-group-text{
+    background-color: #faf9f6!important;
+    border: none;
+}
+
+.bi-search{
+    color: #2F4F2F;
+}
+
+.sort-select, .filter-select{
+    background-color: #faf9f6;
+    color: #4A7A8C;
+}
+
+.sort-opt:hover ,.sort-opt:checked .filter-opt:hover ,.filter-opt:checked{
+    background-color: #4A7A8C;
+    box-shadow: 0 0 10px 100px #4A7A8C inset !important;
+    color: #FAF9F6;
+}
