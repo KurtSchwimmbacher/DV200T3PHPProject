@@ -8,6 +8,11 @@ if (!isset($_SESSION['username'])) {
 }
 
 // Fetch all approved questions with the number of replies
+// Get filter and sort parameters
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : '';
+$sort = isset($_GET['sort']) ? $_GET['sort'] : 'date_desc';
+
+// Prepare base SQL query
 $sql = "SELECT q.*, 
                u.username,
                (SELECT GROUP_CONCAT(t.TagName) 
@@ -22,14 +27,60 @@ $sql = "SELECT q.*,
         JOIN users u ON q.UserID = u.id
         WHERE q.isApproved = 'approved'";
 
+// Add search condition
+if ($search) {
+    $sql .= " AND (q.QuestionTitle LIKE '%$search%' OR q.QuestionBody LIKE '%$search%')";
+}
+
+// Add tag filter condition
+if (!empty($_GET['tags']) && !in_array('all', $_GET['tags'])) {
+    $tags = array_map([$conn, 'real_escape_string'], $_GET['tags']);
+    $tagConditions = array_map(function($tag) use ($conn) {
+        return "t.TagName = '{$conn->real_escape_string($tag)}'";
+    }, $tags);
+    $sql .= " AND EXISTS (
+                SELECT 1 
+                FROM question_tags qt 
+                JOIN tags t ON qt.TagID = t.TagID 
+                WHERE qt.QuestionID = q.QuestionID 
+                AND (" . implode(' OR ', $tagConditions) . ")
+            )";
+}
+
+// Add sorting condition
+switch ($sort) {
+    case 'date_desc':
+        $sql .= " ORDER BY q.createdAt DESC";
+        break;
+    case 'date_asc':
+        $sql .= " ORDER BY q.createdAt ASC";
+        break;
+    case 'votes_desc':
+        $sql .= " ORDER BY totalVotes DESC";
+        break;
+    case 'votes_asc':
+        $sql .= " ORDER BY totalVotes ASC";
+        break;
+    default:
+        $sql .= " ORDER BY q.dateCreated DESC"; // Default sort
+}
+
+// Fetch results
 $result = $conn->query($sql);
+
+
 ?>
+
 
 <?php include '../includes/header.php'; ?>
 
+<!-- link to css -->
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/tag-styles.css" rel="stylesheet">
+
+<!-- link to js -->
 <script src="../js/vote.js"></script>
+<script src="../js/filterFeed.js"></script>
 
 <main class="main-content">
     <div class="index-title-con">
@@ -37,7 +88,45 @@ $result = $conn->query($sql);
     </div>
 
     <div class="container">
+
         <div class="row">
+            <div class="col-12">
+                <form id="filter-form">
+                    <div class="form-group">
+                        <label for="search">Search:</label>
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search questions" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="sort">Sort By:</label>
+                        <select id="sort" name="sort" class="form-select">
+                            <option value="date_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_desc') ? 'selected' : ''; ?>>Date (Newest First)</option>
+                            <option value="date_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'date_asc') ? 'selected' : ''; ?>>Date (Oldest First)</option>
+                            <option value="votes_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_desc') ? 'selected' : ''; ?>>Votes (Highest First)</option>
+                            <option value="votes_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'votes_asc') ? 'selected' : ''; ?>>Votes (Lowest First)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Filter by Tags:</label>
+                        <select id="tags" name="tags[]" class="form-select">
+                            <option value="all">All</option>
+                            <?php
+                            $availableTags = ['New to Game', 'Advice', 'Help', 'Rules', 'Strategy'];
+                            foreach ($availableTags as $tag): 
+                                $selected = isset($_GET['tags']) && in_array($tag, $_GET['tags']) ? 'selected' : '';
+                            ?>
+                                <option value="<?php echo htmlspecialchars($tag); ?>" <?php echo $selected; ?>>
+                                    <?php echo htmlspecialchars($tag); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary">Apply</button> -->
+                </form>
+            </div>  
+        </div>
+
+
+        <div id="results" class="row">
             <?php if ($result->num_rows > 0): ?>
                 <?php while($row = $result->fetch_assoc()): ?>
                     <div class="col-md-12 mb-4">
