@@ -115,19 +115,29 @@ The idea was to create a centralised hub where students can post questions or ju
 ## UI Design
 
 ### Home Page
-![Home Page UI Design]
+![Home Page UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Home-Design.png)
 
 ### Create Post Page
+![Create Post UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Create-Post-Design.png)
 
-
-### Create a Post Page
-
+### Update a Post Page
+![Update Post UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Update-Post-Design.png)
 
 ### Feed Page
-
+![Feed Page UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Feed-Design.png)
 
 ### Profile Page
-![Profile Page UI Design]
+![Profile Page UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Account-Activity-Design.png)
+
+### Admin Approve Page
+![Admin Approve UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Admin-Approve-Design.png)
+
+### Login Page
+![Login UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Login-Design.png)
+
+### Sign Up Page
+![Sign Up UI Design](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/SignUp-Design.png)
+
 
 ## Development Process
 
