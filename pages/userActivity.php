@@ -143,8 +143,8 @@ $activityResult = $stmt->get_result();
                             <li class="list-group-item mb-4 mt-3">
                                 <?php 
                                 // Determine the type of activity being logged to format log
-                                if($activity['ActivityType']==='Posted Question'){
-                                    // For "Posted Question" activity type
+                                if($activity['ActivityType']==='Posted Question' || $activity['ActivityType']==='Post Deleted'){
+                                    // For "Posted Question", "Post Deleted" activity types
                                     echo '<strong>' . htmlspecialchars($activity['ActivityType']) . ':</strong> ';
                                     echo htmlspecialchars("You " . $activity['ActivityDetails']);
                                 }
