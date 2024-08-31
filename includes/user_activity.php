@@ -57,7 +57,7 @@ $conn->close();
 <div class="user-activity">
     <div class="user-profile mt-5">
         <img src="../<?php echo htmlspecialchars($profilePicture); ?>" alt="<?php echo htmlspecialchars($profilePicture); ?>" class="profile-picture" id="profilePicture" data-toggle="modal" data-target="#profileModal" style="cursor: pointer;">
-        <h2><?php echo htmlspecialchars($username); ?></h2>
+        <h2 class="user-profile-title"><?php echo htmlspecialchars($username); ?></h2>
     </div>
     <div class="user-stats">
         <p><strong>Posts:</strong> <?php echo $postCount; ?></p>
@@ -75,7 +75,7 @@ $conn->close();
                 <i class="bi bi-x-lg close" data-dismiss="modal" aria-label="Close"></i>
             </div>
             <div class="modal-body">
-                <form id="profilePictureForm" action="../includes/update_profile_picture.php" method="POST" enctype="multipart/form-data">
+                <form id="profilePictureForm" action="../functionality/update_profile_picture.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="profilePictureInput" class="d-block">
                         <img src="../<?php echo htmlspecialchars($profilePicture); ?>" alt="Profile Picture" id="profilePicturePreview" class="profile-picture-input" >

@@ -45,10 +45,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 800 !important;
 }
 
-.user-profile {
-    margin-bottom: 20px;
+
+.user-profile-title{
+    font-size: 64px;
 }
     
 .profile-picture {
@@ -60,6 +63,7 @@
     
 .user-stats p {
     margin: 5px 0;
+    font-size: 24px;
 }
 
 
