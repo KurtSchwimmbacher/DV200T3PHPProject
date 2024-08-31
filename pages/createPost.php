@@ -3,6 +3,7 @@
 <!-- upload functionality -->
 <?php
 require_once '../includes/config.php';
+require_once '../functionality/postActivity.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['userID'])) {
@@ -66,7 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             $tagStmt->close();
         }
 
-        echo "<script>alert('Question uploaded successfully');</script>";
+        logActivity($conn, $userID, 'Posted Question', ' posted a question titled: '.$qTitle );
+
         header("Location: ../pages/index.php");
         exit();
     } else {

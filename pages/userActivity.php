@@ -1,6 +1,6 @@
 <!-- feed.php -->
 <?php 
-require_once '../includes/config.php'; // Ensure this is at the very top
+require_once '../includes/config.php'; 
 
 if (!isset($_SESSION['username'])) {
     // Redirect if not logged in
@@ -38,6 +38,19 @@ $stmt->bind_param('s', $userID);
 $stmt->execute();
 $result = $stmt->get_result();
 }
+
+// Fetch user activities
+$sql = "SELECT ua.*, u.Username 
+    FROM user_activities ua
+    JOIN users u ON ua.UserID = u.id
+    WHERE ua.UserID = ?
+    ORDER BY ua.Timestamp DESC";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('s', $userID);
+$stmt->execute();
+$activityResult = $stmt->get_result();
+
 
 ?>
 
@@ -122,15 +135,20 @@ $result = $stmt->get_result();
                     </a>
                 </button>
                 </div>
+                
                 <div class="activity-section">
                     <h2 class="recent-activity-title mb-2">Recent Activity</h2>
                     <ul class="list-group-feed">
-                        <!-- Example static activity list items -->
-                        <li class="list-group-item">You replied to a question</li>
-                        <li class="list-group-item">You upvoted an answer</li>
-                        <li class="list-group-item">Your question received a new reply</li>
+                        <?php while ($activity = $activityResult->fetch_assoc()): ?>
+                            <li class="list-group-item">
+                                <strong><?php echo htmlspecialchars($activity['ActivityType']); ?>:</strong>
+                                <?php echo htmlspecialchars("You" . $activity['ActivityDetails']); ?>
+                                
+                            </li>
+                        <?php endwhile; ?>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
