@@ -16,14 +16,6 @@ body{
   }
 
 
-/* .index-title-con{
-    width: 100vw;
-    margin-left: -5%;
-    background-image: url(../assets/Birdsong.png);
-    background-position: center;
-    background-size: cover;
-}
-   */
 .index-title{
     width: 100%;
     margin-left: 0%;
@@ -76,6 +68,9 @@ a{
 .card-img-top{
     padding: 2%;
     border-radius: 15px;
+}
+
+.index-card-img{
     height: 50vh !important;
 }
 

@@ -153,6 +153,11 @@ $activityResult = $stmt->get_result();
                                     echo '<strong>' . htmlspecialchars($activity['ActivityType']) . ':</strong> ';
                                     echo htmlspecialchars("Your " . $activity['ActivityDetails']);
                                 }
+                                else if($activity['ActivityType']==='Reply'){
+                                    // For "Post Moderated" activity type
+                                    echo '<strong>' . htmlspecialchars($activity['ActivityType']) . ':</strong> ';
+                                    echo htmlspecialchars( $activity['ActivityDetails']);
+                                }
                                 ?>
                                 
                             </li>

@@ -98,7 +98,7 @@ $result_liked = $stmt_liked->get_result();
                                     <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
                                 </p>
                                 <?php if ($row['questionImg']): ?>
-                                    <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                                    <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top index-card-img">
                                 <?php endif; ?>
                                 <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>

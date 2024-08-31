@@ -19,7 +19,7 @@ $questionID = intval($_GET['questionID']);
 
 // Fetch the specific question
 $sql = "SELECT q.*,
-                u.username,
+                u.username,u.profile_picture,
                (SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)) as totalVotes
         FROM questions q 
         JOIN users u on q.UserID = u.id
@@ -47,7 +47,7 @@ $repliesResult = $stmt_replies->get_result();
 <?php include '../includes/header.php'; ?>
 
 <!-- link css -->
-<link href="../css/header.css" rel="stylesheet">
+<link href="../css/singleQuestion.css" rel="stylesheet">
 
 <!-- link js -->
 <script src="../js/vote.js"></script>
@@ -61,12 +61,13 @@ $repliesResult = $stmt_replies->get_result();
                         <div class="filtered-bg"></div>
                         <!-- display username -->
                         <p class="card-text">
+                        <img class="pfp-index" src="../<?php echo htmlspecialchars($question['profile_picture']); ?>" alt="" >
                             <small class="text-muted"><?php echo htmlspecialchars($question['username']) ?></small>
                         </p>
                         <h3 class="card-title"><?php echo htmlspecialchars($question['QuestionTitle']); ?></h3>
                         <p class="card-text"><?php echo nl2br(htmlspecialchars($question['QuestionBody'])); ?></p>
                         <?php if ($question['questionImg']): ?>
-                            <img src="../uploads/<?php echo htmlspecialchars($question['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                            <img src="../uploads/<?php echo htmlspecialchars($question['questionImg']); ?>" alt="Question Image" class="card-img-top singleQ-img">
                         <?php endif; ?>
                         
                         <!-- Like/Dislike buttons -->
