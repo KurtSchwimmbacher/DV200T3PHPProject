@@ -2,6 +2,7 @@
 <?php
 
 require_once '../includes/config.php';
+require_once '../functionality/postActivity.php';
 
 // Check if the user is an admin
 if (!isset($_SESSION['userID']) || $_SESSION['role'] !== 1) {
@@ -24,15 +25,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $questionID = $_POST['questionID'];
         $isApproved = isset($_POST['approve']) ? 'approved' : 'denied'; // Set status based on button clicked
         
+        // Fetch the question details for logging
+        $fetchSql = "SELECT UserID, QuestionTitle FROM questions WHERE QuestionID = ?";
+        $fetchStmt = $conn->prepare($fetchSql);
+        $fetchStmt->bind_param("i", $questionID);
+        $fetchStmt->execute();
+        $questionDetails = $fetchStmt->get_result()->fetch_assoc();
+        $fetchStmt->close();
+        
+        // Extract UserID and QuestionTitle from the fetched details
+        $questionUserID = $questionDetails['UserID'];
+        $questionTitle = $questionDetails['QuestionTitle'];
+
+        // update the questions approval status 
         $sql = "UPDATE questions SET isApproved = ? WHERE QuestionID = ?";
         $stmt = $conn->prepare($sql);
 
         if ($stmt) {
             $stmt->bind_param("si", $isApproved, $questionID);
             if ($stmt->execute()) {
+
+                  // Log the activity for the user whose post is being moderated
+                  logActivity($conn, $questionUserID, 'Post Moderated', 'Post titled: '.$questionTitle.' was '.$isApproved);
+
                 // Redirect to the same page to refresh the list
                 header("Location: adminApprove.php");
-                // echo "Question updated successfully.";
             } else {
                 echo "Error updating question: " . $stmt->error;
             }

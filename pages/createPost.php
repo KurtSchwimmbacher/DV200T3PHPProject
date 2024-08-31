@@ -67,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             $tagStmt->close();
         }
 
+        // logs the post being created for user activity feed
         logActivity($conn, $userID, 'Posted Question', ' posted a question titled: '.$qTitle );
 
         header("Location: ../pages/index.php");

@@ -140,9 +140,20 @@ $activityResult = $stmt->get_result();
                     <h2 class="recent-activity-title mb-2">Recent Activity</h2>
                     <ul class="list-group-feed">
                         <?php while ($activity = $activityResult->fetch_assoc()): ?>
-                            <li class="list-group-item">
-                                <strong><?php echo htmlspecialchars($activity['ActivityType']); ?>:</strong>
-                                <?php echo htmlspecialchars("You" . $activity['ActivityDetails']); ?>
+                            <li class="list-group-item mb-4 mt-3">
+                                <?php 
+                                // Determine the type of activity being logged to format log
+                                if($activity['ActivityType']==='Posted Question'){
+                                    // For "Posted Question" activity type
+                                    echo '<strong>' . htmlspecialchars($activity['ActivityType']) . ':</strong> ';
+                                    echo htmlspecialchars("You " . $activity['ActivityDetails']);
+                                }
+                                else if($activity['ActivityType']==='Post Moderated'){
+                                    // For "Post Moderated" activity type
+                                    echo '<strong>' . htmlspecialchars($activity['ActivityType']) . ':</strong> ';
+                                    echo htmlspecialchars("Your " . $activity['ActivityDetails']);
+                                }
+                                ?>
                                 
                             </li>
                         <?php endwhile; ?>
