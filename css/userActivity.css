@@ -105,3 +105,39 @@
     border-radius: 100%;
     justify-content: center;
 }
+
+/* tabs */
+/* ====================================================================== */
+
+.nav-tabs{
+    font-family: "Shadows Into Light", cursive !important; 
+    font-weight: 600;
+}
+
+.active-tab{
+    background-color: #4A7A8C !important;
+    border: none;
+}
+
+.active-tab:hover{
+    border: none;
+}
+
+.nav-link-tab{
+    text-decoration: none;
+    color: #FAF9F6;
+    font-size: 24px;
+}
+
+.nav-link-tab:hover{
+    color: #2F4F2F !important;
+    border: none;
+}
+
+.nav-link-tab:after{
+    border: none;
+}
+
+.nav-tabs{
+    border-bottom: none;
+}
