@@ -1,20 +1,25 @@
 /* tag-styles.css */
 .badge-new-to-game {
-    background-color: #007bff; /* Example color */
-    color: #fff;
+    background-color: #637A4D; 
+    color: #faf9f6;
 }
 
 .badge-advice {
-    background-color: #28a745; /* Example color */
-    color: #fff;
+    background-color: #4A7A8C; 
+    color: #faf9f6;
 }
 
 .badge-help {
-    background-color: #ffc107; /* Example color */
+    background-color: #C9B754; 
     color: #000;
 }
 
-.badge-default {
-    background-color: #6c757d; /* Example color */
-    color: #fff;
+.badge-rules {
+    background-color: #446A98; 
+    color: #faf9f6;
+}
+
+.badge-strategy {
+    background-color: #E45C18; 
+    color: #faf9f6;
 }

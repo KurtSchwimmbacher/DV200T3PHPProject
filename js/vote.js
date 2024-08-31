@@ -1,5 +1,10 @@
 // vote.js
 $(document).ready(function() {
+
+    $('#createNewPost').on('click',function(){
+        window.location.href = 'http://localhost/DV200T3PHPProject/pages/createPost.php';
+    })
+
     $('.vote-btn').on('click', function() {
         var action = $(this).data('action');
         var questionID = $(this).data('question-id');

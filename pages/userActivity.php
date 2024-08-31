@@ -67,7 +67,7 @@ $result = $stmt->get_result();
             <div class="col-md-4">
                 <div class="create-new-post">
                 <button class="btn btn-new-post mb-3 vote-btn" >
-                    <a class="link-to-new-post" href="../pages/createPost.php">
+                    <a id="createNewPost" class="link-to-new-post" href="../pages/createPost.php">
                         Create New Post
                     </a>
                 </button>

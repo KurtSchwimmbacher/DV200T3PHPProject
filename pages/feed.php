@@ -1,5 +1,5 @@
 <?php 
-require_once '../includes/functions.php'; // Move function definition here
+require_once '../functionality/getTagClass.php';
 require_once '../includes/config.php'; 
 
 if (!isset($_SESSION['username'])) {
