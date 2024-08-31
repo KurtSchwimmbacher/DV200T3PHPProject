@@ -95,3 +95,8 @@ a{
     font-weight: 800 !important;
 }
 
+.pfp-index{
+    width: 50px !important;
+    height: 50px;
+    border-radius: 50% !important;
+}

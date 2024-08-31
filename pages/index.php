@@ -3,7 +3,7 @@ require_once '../includes/config.php'; // Ensure this is at the very top
 
 // Fetch the 6 most recent posts
 $sql_recent = "SELECT q.*, 
-                        u.username,
+                        u.username, u.profile_picture,
                       (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
                       COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
                FROM questions q 
@@ -17,7 +17,7 @@ $result_recent = $stmt_recent->get_result();
 
 // Fetch the 6 most liked posts
 $sql_liked = "SELECT q.*, 
-                    u.username,
+                    u.username,u.profile_picture,
                      (SELECT COUNT(*) FROM answers a WHERE a.QuestionID = q.QuestionID) as reply_count,
                      COALESCE((SELECT SUM(v.voteValue) FROM votes v WHERE v.AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = q.QuestionID)), 0) as totalVotes
               FROM questions q 
@@ -53,13 +53,16 @@ $result_liked = $stmt_liked->get_result();
 
                         <div class="card">
                             <div class="filtered-bg"></div>
-                            <?php if ($row['questionImg']): ?>
-                                <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
-                            <?php endif; ?>
+
                             <div class="card-body">
                                 <p class="card-text card-username">
+                                    <img class="pfp-index" src="../<?php echo htmlspecialchars($row['profile_picture']); ?>" alt="" >
                                     <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
                                 </p>
+                                <?php if ($row['questionImg']): ?>
+                                    <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                                <?php endif; ?>
+
                                 <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                 </a>
@@ -88,14 +91,15 @@ $result_liked = $stmt_liked->get_result();
                         <div class="card">
                         <div class="filtered-bg"></div>
                         
-                            <?php if ($row['questionImg']): ?>
-                                <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
-                            <?php endif; ?>
                             <div class="card-body">
                                 <!-- display username -->
                                 <p class="card-text card-username">
+                                <img class="pfp-index" src="../<?php echo htmlspecialchars($row['profile_picture']); ?>" alt="" >
                                     <small class="text-muted"><?php echo htmlspecialchars($row['username']) ?></small>
                                 </p>
+                                <?php if ($row['questionImg']): ?>
+                                    <img src="../uploads/<?php echo htmlspecialchars($row['questionImg']); ?>" alt="Question Image" class="card-img-top">
+                                <?php endif; ?>
                                 <a href="../pages/singleQuestion.php?questionID=<?php echo htmlspecialchars($row['QuestionID']); ?>">
                                     <h5 class="card-title"><?php echo htmlspecialchars($row['QuestionTitle']); ?></h5>
                                 </a>
