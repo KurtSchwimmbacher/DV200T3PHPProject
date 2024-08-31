@@ -3,6 +3,7 @@
 <?php 
 include '../includes/header.php'; 
 require_once '../includes/config.php';
+require_once '../functionality/postActivity.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['userID'])) {
@@ -49,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $stmt->bind_param("sssii", $qTitle, $qBody, $qPic, $questionID, $userID);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Question updated successfully');</script>";
-        header("Location: ../pages/feed.php");
+        // logs the post being created for user activity feed
+        logActivity($conn, $userID, 'Post Updated', ' updated a question titled: '.$qTitle );
+        
+        header("Location: ../pages/userActivity.php");
     } else {
         echo "Error: " . $stmt->error;
     }
