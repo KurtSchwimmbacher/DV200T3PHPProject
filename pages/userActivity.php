@@ -99,8 +99,8 @@ $activityResult = $stmt->get_result();
                                         <p class="card-text">
                                             <small class="text-muted">Replies: <?= $row['reply_count'] ?> | Votes: <?= $row['totalVotes'] ?></small>
                                         </p>
-                                        <a href="../includes/updatePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-update">Update</a>
-                                        <a href="../includes/deletePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this question?');">Delete</a>
+                                        <a href="../includes/updatePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-update"><i class="bi bi-pencil-fill"></i> Update</a>
+                                        <a href="../includes/deletePost.php?id=<?= $row['QuestionID'] ?>" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this question?');"> <i class="bi bi-trash3-fill"></i> Delete</a>
                                     </div>
                                 </div>
                             </div>

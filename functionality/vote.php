@@ -13,18 +13,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $voteValue = ($action === 'like') ? 1 : -1;
 
     // Check if the user has already voted on this question
-    $stmt = $conn->prepare("SELECT * FROM votes WHERE UserID = ? AND AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = ?)");
+    $stmt = $conn->prepare("
+        SELECT v.voteValue 
+        FROM votes v
+        JOIN answers a ON v.AnswerID = a.AnswerID
+        WHERE v.UserID = ? AND a.QuestionID = ?
+    ");
     $stmt->bind_param("ii", $userID, $questionID);
     $stmt->execute();
     $existingVote = $stmt->get_result()->fetch_assoc();
-    
+
     if ($existingVote) {
         // Update the existing vote
-        $stmt = $conn->prepare("UPDATE votes SET voteValue = ? WHERE UserID = ? AND AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = ?)");
+        $stmt = $conn->prepare("
+            UPDATE votes 
+            SET voteValue = ? 
+            WHERE UserID = ? 
+            AND AnswerID IN (SELECT AnswerID FROM answers WHERE QuestionID = ?)
+        ");
         $stmt->bind_param("iii", $voteValue, $userID, $questionID);
     } else {
         // Insert a new vote
-        $stmt = $conn->prepare("INSERT INTO votes (UserID, AnswerID, voteValue) SELECT ?, AnswerID, ? FROM answers WHERE QuestionID = ?");
+        $stmt = $conn->prepare("
+            INSERT INTO votes (UserID, AnswerID, voteValue) 
+            SELECT ?, AnswerID, ? 
+            FROM answers 
+            WHERE QuestionID = ?
+        ");
         $stmt->bind_param("iii", $userID, $voteValue, $questionID);
     }
 
