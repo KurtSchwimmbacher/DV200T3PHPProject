@@ -31,7 +31,7 @@ $(document).ready(function() {
                 } else if (response.status === 'alreadyVoted') {
                     alert('You have already voted on this question.');
                 } else {
-                    console.error('Error:', response.message);
+                    alert('Error:', response.message);
                 }
             },
             error: function(xhr, status, error) {
