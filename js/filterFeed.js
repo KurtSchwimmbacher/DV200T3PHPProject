@@ -2,7 +2,7 @@ $(document).ready(function() {
     
     function fetchResults() {
         $.ajax({
-            url: '../pages/feed.php', // Adjust this to your actual PHP script URL
+            url: '../pages/feed.php',
             method: 'GET',
             data: $('#filter-form').serialize(),
             success: function(response) {

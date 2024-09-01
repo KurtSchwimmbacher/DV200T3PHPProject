@@ -61,7 +61,7 @@ $repliesResult = $stmt_replies->get_result();
                         <div class="filtered-bg"></div>
                         <!-- display username -->
                         <p class="card-text">
-                        <img class="pfp-index" src="../<?php echo htmlspecialchars($question['profile_picture']); ?>" alt="" >
+                            <img class="pfp-index" src="../<?php echo htmlspecialchars($question['profile_picture']); ?>" alt="" >
                             <small class="text-muted"><?php echo htmlspecialchars($question['username']) ?></small>
                         </p>
                         <h3 class="card-title"><?php echo htmlspecialchars($question['QuestionTitle']); ?></h3>
@@ -72,13 +72,13 @@ $repliesResult = $stmt_replies->get_result();
                         
                         <!-- Like/Dislike buttons -->
                         <button class="btn vote-btn" data-action="like" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">
-                            <i class="bi bi-arrow-up"></i> <!-- Added closing tag -->
+                            <i class="bi bi-arrow-up"></i> 
                         </button>
                         <span class="vote-count" id="vote-count-<?php echo htmlspecialchars($question['QuestionID']); ?>">
                             <?php echo $question['totalVotes']; ?>
                         </span>
                         <button class="btn vote-btn" data-action="dislike" data-question-id="<?php echo htmlspecialchars($question['QuestionID']); ?>">
-                            <i class="bi bi-arrow-down"></i> <!-- Added closing tag -->
+                            <i class="bi bi-arrow-down"></i>
                         </button>
 
 

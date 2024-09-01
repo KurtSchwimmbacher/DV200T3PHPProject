@@ -1,5 +1,5 @@
 <?php 
-require_once '../includes/config.php'; // Ensure this is at the very top
+require_once '../includes/config.php';
 
 // Fetch the 6 most recent posts
 $sql_recent = "SELECT q.*, 
@@ -40,7 +40,9 @@ $result_liked = $stmt_liked->get_result();
 
 <main class="main-content">
     <div class="index-title-con">
-        <h1 class="index-title">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+        <h1 class="index-title">
+            Welcome, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : ''; ?>!
+        </h1>
     </div>
 
     <div class="container">
@@ -78,7 +80,7 @@ $result_liked = $stmt_liked->get_result();
                     </div>
                 <?php endwhile; ?>
             <?php else: ?>
-                <p>No questions have been approved yet.</p>
+                <p>No questions have been posted yet.</p>
             <?php endif; ?>
         </div>
 

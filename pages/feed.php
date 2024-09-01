@@ -193,7 +193,7 @@ $result = $conn->query($sql);
                     </div>
                 <?php endwhile; ?>
             <?php else: ?>
-                <p>No questions have been approved yet.</p>
+                <p>No questions have been posted yet.</p>
             <?php endif; ?>
         </div>
     </div>

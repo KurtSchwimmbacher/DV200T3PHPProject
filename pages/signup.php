@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Set default profile picture if no file is uploaded
-        $profilePicturePath = 'default_profile.png';
+        $profilePicturePath = "uploads/profile_pictures/default_profile.png";
     }
 
     // Prepare the SQL statement with profile picture
@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Registration success
-        // Optionally, you can redirect the user to a login page or home page
         header('Location: login.php');
         exit;
     } else {
