@@ -42,7 +42,7 @@ $result_liked = $stmt_liked->get_result();
     <div class="index-title-con">
         <h1 class="index-title">
             Welcome, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : ''; ?>!
-        </h1>
+        </h1>   
     </div>
 
     <div class="container">
