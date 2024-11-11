@@ -180,6 +180,13 @@ The idea was to create a centralised hub where users can post questions regardin
 ### Home Page Mockup
 ![Home Page Mockup](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Mockup-Home.png)
 
+## Technical Documents
+### ERD
+![ERD](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Supporting_Docs/ERD.png)
+### User FLow Diagram
+![User Flow Diagram](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/ReadMeAssets/Supporting_Docs/User_Flow_Diagram.png)
+
+
 ## Demonstration
 ### The video has been split into two section: for the website and the code, due to the length of the code discussion.
 
