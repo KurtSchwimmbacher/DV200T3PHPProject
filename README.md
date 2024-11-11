@@ -194,3 +194,9 @@ https://drive.google.com/file/d/1tDYIP3_Q2OBgRXUBlawq1oRaDuwcoHcd/view?usp=shari
 
 ### License
 [MIT](LICENSE) © Kurt Schwimmbacher
+
+### Author
+Kurt Schwimmbacher - 231002@virtualwindow.co.za
+
+### Contribution
+In order to contribute to this project, clone the project according the instructions layed out above and create a new branch.
