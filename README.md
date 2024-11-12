@@ -1,6 +1,44 @@
+# RestHere
+## Kurt Schwimmbacher 231002
+
 ![ClearView Header Image](https://github.com/KurtSchwimmbacher/DV200T3PHPProject/blob/main/assets/vagabond_logo.png)
 
 - - - -
+## Table of Contents
+
+1. [About Forest Tactics](#about-forest-tactics)
+2. [Built With](#built-with)
+3. [How To Install](#how-to-install)
+4. [Features](#features)
+5. [The Idea](#the-idea)
+6. [UI Design](#ui-design)
+   - [Home Page](#home-page)
+   - [Create Post Page](#create-post-page)
+   - [Update a Post Page](#update-a-post-page)
+   - [Feed Page](#feed-page)
+   - [Profile / Account Activity Page](#profile--account-activity-page)
+   - [Admin Approve Page](#admin-approve-page)
+   - [Single Question Page](#single-question-page)
+   - [Login Page](#login-page)
+   - [Sign Up Page](#sign-up-page)
+7. [Development Process](#development-process)
+   - [Highlights](#highlights)
+   - [Challenges](#challenges)
+8. [Future Implementations](#future-implementations)
+9. [Mockups](#mockups)
+   - [Account Mockup](#account-mockup)
+   - [Feed Page Mockup](#feed-page-mockup)
+   - [Individual Post Page Mockup](#individual-post-page-mockup)
+   - [Home Page Mockup](#home-page-mockup)
+10. [Technical Documents](#technical-documents)
+    - [ERD](#erd)
+    - [User Flow Diagram](#user-flow-diagram)
+11. [Demonstration](#demonstration)
+12. [License](#license)
+13. [Author](#author)
+14. [Contribution](#contribution)
+
+
 
 # About Forest Tactics
 
